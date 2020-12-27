@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
@@ -57,10 +58,10 @@
             <div class="dropdown">
                 <span><em>Team Name</em></span>
                 <div class="dropdown-content">
-                    <button>Los Angeles Lakers</button>
-                    <button>Brooklyn Nets</button>
-                    <button>Denver Nuggets</button>
-                    <button>Miami Heat</button>
+                    <button onclick="displayLakers()">Los Angeles Lakers</button>
+                    <button onclick="displayNets()">Brooklyn Nets</button>
+                    <button onclick="displayNuggets()">Denver Nuggets</button>
+                    <button onclick="displayHeat()">Miami Heat</button>
                 </div>
             </div>
             <h4 class="mt-5">Team Ranking: </h4>
