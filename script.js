@@ -141,8 +141,9 @@ function displayNets() {
         var ppg = 0;
         var apg = 0;
         var rpg = 0;
-        var pm = 0;     
-        fetch("https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/261", {
+        var pm = 0;
+        for(x<)
+        fetch("https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/" + active_players_id_list[x], {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
@@ -166,10 +167,27 @@ function displayNets() {
                 {
                     apg += parseFloat(b[i].assists);
                 }
+
+                if (b[i].rebounds > 0)
+                {
+                    rpg += parseFloat(b[i].rebounds);
+                }
+
+                if (b[i].plusMinus > 0)
+                {
+                    pm += parseFloat(b[i].plusMinus);
+                }
             }
             ppg = (ppg/82);
-            apg = (apg/82)         
+            apg = (apg/82);
+            rpg = (rpg/82);
+            pm = (pm/82);
+            console.log(ppg, apg, rpg, pm);
+            /*
             document.getElementById("ppg").innerHTML = ppg.toFixed(2);
+            document.getElementById("apg").innerHTML = apg.toFixed(2);
+            document.getElementById("rpg").innerHTML = rpg.toFixed(2);
+            document.getElementById("pm").innerHTML = pm.toFixed(2);*/
         })/*
         .catch(err => {
             console.error(err);
