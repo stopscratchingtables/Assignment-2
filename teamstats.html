@@ -8,7 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
@@ -62,6 +61,11 @@
                     <button onclick="displayNets()">Brooklyn Nets</button>
                     <button onclick="displayNuggets()">Denver Nuggets</button>
                     <button onclick="displayHeat()">Miami Heat</button>
+                    <!-- NEWLY ADDED NBA TEAMS -->
+                    <button onclick="displayCeltics()">Boston Celtics</button>
+                    <button onclick="displayWarriors()">Golden State Warriors</button>
+                    <button onclick="displaySuns()">Pheonix Suns</button>
+                    <button onclick="displayPacers()">Toronto Raptors</button>
                 </div>
             </div>
             <h4 class="mt-5">Team Ranking: </h4>
@@ -103,28 +107,8 @@
                     <th scope="col">+/-</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><img src="" alt="">Name</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><p id="p_name">Name</p></th>
-                    <td><p id="ppg">-</p></td>
-                    <td><p id="apg">-</p></td>
-                    <td><p id="rpg">-</p></td>
-                    <td><p id="pm">-</p></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Name</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
+                <tbody id="team_ranking">
+
                 </tbody>
             </table>
 
@@ -136,6 +120,7 @@
           </div>
         </div>
       </div>
-
+      
+      <script src="script.js"></script>
 </body>
 </html>
