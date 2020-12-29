@@ -108,7 +108,8 @@ function displayNets() {
         document.getElementById("off_score").innerHTML = org.toFixed(2);
     })
 
-    const active_players_list = []
+    let active_players_id_list = []
+    let active_players_name_list = []
     // TEam indiv stats
     fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/4", {
         "method": "GET",
@@ -127,11 +128,44 @@ function displayNets() {
         {
             if (b[i].yearsPro > 1)
             {
-                const c=b[i]
-                active_players_list.push(c.playerId)
+                const c=b[i];
+                active_players_id_list.push(c.playerId);
+                const name = c.firstName + " " + c.lastName;
+                active_players_name_list.push(name);
             }
         }
-        
+        console.log(active_players_name_list[0]);
+        document.getElementById("p_name").innerHTML = active_players_name_list[0];
+
+        //  Player ID and their statistics
+        var ppg = 0
+        fetch("https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/261", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+                "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const a = response.api
+            const b = a.statistics
+            console.log(b);
+            for(let i=0; i<82; i++)
+            {
+                if(b[i].points > 0)
+                {
+                    ppg += parseFloat(b[i].points);
+                }
+            }
+            console.log(ppg/82);            
+            
+        })/*
+        .catch(err => {
+            console.error(err);
+        });*/
+
     })
     .catch(err => {
         console.error(err);
