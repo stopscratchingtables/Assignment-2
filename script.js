@@ -138,7 +138,10 @@ function displayNets() {
         document.getElementById("p_name").innerHTML = active_players_name_list[0];
 
         //  Player ID and their statistics
-        var ppg = 0
+        var ppg = 0;
+        var apg = 0;
+        var rpg = 0;
+        var pm = 0;     
         fetch("https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/261", {
             "method": "GET",
             "headers": {
@@ -154,13 +157,19 @@ function displayNets() {
             console.log(b);
             for(let i=0; i<82; i++)
             {
-                if(b[i].points > 0)
+                if(b[i].points > 0 )
                 {
                     ppg += parseFloat(b[i].points);
                 }
+
+                if (b[i].assists > 0)
+                {
+                    apg += parseFloat(b[i].assists);
+                }
             }
-            console.log(ppg/82);            
-            
+            ppg = (ppg/82);
+            apg = (apg/82)         
+            document.getElementById("ppg").innerHTML = ppg.toFixed(2);
         })/*
         .catch(err => {
             console.error(err);
@@ -170,6 +179,8 @@ function displayNets() {
     .catch(err => {
         console.error(err);
     });
+
+    
 }
 
 
