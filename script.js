@@ -34,24 +34,31 @@ function displayLakers() {
         }
         total_hts = total_hts / data_list.length;
         console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
 
         // DRG
         let drg = 0
         for (let i=0; i < data_list.length; i++)
         {
-            drg += (data_list[i].away_team_score *0.9)
+            drg += data_list[i].visitor_team_score;
         }
-
-        console.log(drg)
-
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg;
+        
         // ORG
         let org = 0
-        for (let i=0; i < data_list.length; i++)
-        {
-            org += (total_hts * 0.9)
-        }
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org;
     })
+
 };
+
+
+
+
+
+
 
 function displayNets() {
     const url = "https://www.balldontlie.io/api/v1/teams/3"
@@ -83,15 +90,59 @@ function displayNets() {
         }
         total_hts = total_hts / data_list.length;
         console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
 
         // DRG
         let drg = 0
         for (let i=0; i < data_list.length; i++)
         {
-            drg += (data_list[i].away_team_score * 0.9)
+            drg += (data_list[i].visitor_team_score * 0.9)
+        }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
+    })
+
+    const active_players_list = []
+    // TEam indiv stats
+    fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/4", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+            "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
         }
     })
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        const a = response.api
+        console.log(a.players);
+        const b = a.players
+        for (let i=0; i < b.length; i++)
+        {
+            if (b[i].yearsPro > 1)
+            {
+                const c=b[i]
+                active_players_list.push(c.playerId)
+            }
+        }
+        
+    })
+    .catch(err => {
+        console.error(err);
+    });
 }
+
+
+
+
+
+
 
 function displayNuggets() {
     const url = "https://www.balldontlie.io/api/v1/teams/8"
@@ -123,15 +174,32 @@ function displayNuggets() {
         }
         total_hts = total_hts / data_list.length;
         console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
 
         // DRG
         let drg = 0
         for (let i=0; i < data_list.length; i++)
         {
-            drg += (data_list[i].away_team_score * 0.9)
+            drg += (data_list[i].visitor_team_score * 0.9)
         }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
     })
 }
+
+
+
+
+
+
+
+
 
 function displayHeat() {
     const url = "https://www.balldontlie.io/api/v1/teams/16"
@@ -163,12 +231,21 @@ function displayHeat() {
         }
         total_hts = total_hts / data_list.length;
         console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
 
         // DRG
         let drg = 0
         for (let i=0; i < data_list.length; i++)
         {
-            drg += (data_list[i].away_team_score * 0.9)
+            drg += (data_list[i].visitor_team_score * 0.9)
         }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
     })
 }
