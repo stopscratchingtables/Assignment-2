@@ -47,7 +47,7 @@ function get_playerStats(p_id) {
     const url_20 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
     const url_19 = "https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=" + p_id;
     const url_18 = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=" + p_id;
-    const a = fetch(url_18)
+    const a = fetch(url_19)
 
     a.then(response => {
         return response.json()
