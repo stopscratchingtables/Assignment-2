@@ -82,6 +82,7 @@ function displayLakers() {
         {
             var p_id = active_players_id_list[x];
             var p_name = active_players_name_list[x];
+            $("#team_ranking tr").remove();
             buildTable(p_id, p_name);
         }
     })
@@ -172,6 +173,7 @@ function displayNets() {
         {
             var p_id = active_players_id_list[x];
             var p_name = active_players_name_list[x];
+            $("#team_ranking tr").remove();
             buildTable(p_id, p_name);
         }
 
@@ -322,6 +324,7 @@ function displayNuggets() {
             {
                 var p_id = active_players_id_list[x];
                 var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
                 buildTable(p_id, p_name);
             }
     
@@ -331,8 +334,6 @@ function displayNuggets() {
         });
     })
 }
-
-
 
 
 
@@ -416,6 +417,384 @@ function displayHeat() {
             {
                 var p_id = active_players_id_list[x];
                 var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
+                buildTable(p_id, p_name);
+            }
+    
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    })
+}
+
+
+
+
+function displayCeltics() {
+    const url = "https://www.balldontlie.io/api/v1/teams/2"
+    const cel = fetch(url)
+
+    cel.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+
+    document.getElementById('t_name').innerHTML = 'Boston Celtics';
+
+    const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=2"
+    const lakers_score = fetch(url2)
+    lakers_score.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+
+        let data_list = data.data
+        // PPG
+        let total_hts = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            total_hts += data_list[i].home_team_score;
+        }
+        total_hts = total_hts / data_list.length;
+        console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
+
+        // DRG
+        let drg = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            drg += (data_list[i].visitor_team_score * 0.9)
+        }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
+
+
+        let active_players_id_list = []
+        let active_players_name_list = []
+
+        // TEam indiv stats
+        fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/2", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+                "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const a = response.api
+            console.log(a.players);
+            const b = a.players
+            for (let i=0; i < b.length; i++)
+            {
+                if (b[i].yearsPro > 1)
+                {
+                    const c=b[i];
+                    active_players_id_list.push(c.playerId);
+                    const name = c.firstName + " " + c.lastName;
+                    active_players_name_list.push(name);
+                }
+            }
+            
+            for (var x=0; x<15 ;x++)
+            {
+                var p_id = active_players_id_list[x];
+                var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
+                buildTable(p_id, p_name);
+            }
+    
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    })
+}
+
+
+
+function displayWarriors() {
+    const url = "https://www.balldontlie.io/api/v1/teams/11"
+    const cel = fetch(url)
+
+    cel.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+
+    document.getElementById('t_name').innerHTML = 'Golden State Warriors';
+
+    const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=11"
+    const lakers_score = fetch(url2)
+    lakers_score.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+
+        let data_list = data.data
+        // PPG
+        let total_hts = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            total_hts += data_list[i].home_team_score;
+        }
+        total_hts = total_hts / data_list.length;
+        console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
+
+        // DRG
+        let drg = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            drg += (data_list[i].visitor_team_score * 0.9)
+        }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
+
+
+        let active_players_id_list = []
+        let active_players_name_list = []
+        
+        // TEam indiv stats
+        fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/11", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+                "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const a = response.api
+            console.log(a.players);
+            const b = a.players
+            for (let i=0; i < b.length; i++)
+            {
+                if (b[i].yearsPro > 1)
+                {
+                    const c=b[i];
+                    active_players_id_list.push(c.playerId);
+                    const name = c.firstName + " " + c.lastName;
+                    active_players_name_list.push(name);
+                }
+            }
+            
+            for (var x=0; x<15 ;x++)
+            {
+                var p_id = active_players_id_list[x];
+                var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
+                buildTable(p_id, p_name);
+            }
+    
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    })
+}
+
+
+
+
+
+
+function displayRaptors() {
+    const url = "https://www.balldontlie.io/api/v1/teams/28"
+    const cel = fetch(url)
+
+    cel.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+
+    document.getElementById('t_name').innerHTML = 'Toronto Raptors';
+
+    const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=28"
+    const lakers_score = fetch(url2)
+    lakers_score.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+
+        let data_list = data.data
+        // PPG
+        let total_hts = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            total_hts += data_list[i].home_team_score;
+        }
+        total_hts = total_hts / data_list.length;
+        console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
+
+        // DRG
+        let drg = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            drg += (data_list[i].visitor_team_score * 0.9)
+        }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
+
+
+        let active_players_id_list = []
+        let active_players_name_list = []
+        
+        // TEam indiv stats
+        fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/38", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+                "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const a = response.api
+            console.log(a.players);
+            const b = a.players
+            for (let i=0; i < b.length; i++)
+            {
+                if (b[i].yearsPro > 1)
+                {
+                    const c=b[i];
+                    active_players_id_list.push(c.playerId);
+                    const name = c.firstName + " " + c.lastName;
+                    active_players_name_list.push(name);
+                }
+            }
+            
+            for (var x=0; x<15 ;x++)
+            {
+                var p_id = active_players_id_list[x];
+                var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
+                buildTable(p_id, p_name);
+            }
+    
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    })
+}
+
+
+
+
+function displaySuns() {
+    const url = "https://www.balldontlie.io/api/v1/teams/24"
+    const cel = fetch(url)
+
+    cel.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+
+    document.getElementById('t_name').innerHTML = 'Pheonix Suns';
+
+    const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=24"
+    const lakers_score = fetch(url2)
+    lakers_score.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+
+        let data_list = data.data
+        // PPG
+        let total_hts = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            total_hts += data_list[i].home_team_score;
+        }
+        total_hts = total_hts / data_list.length;
+        console.log("PPG: " + total_hts);
+        document.getElementById("ppg_score").innerHTML = total_hts;
+
+        // DRG
+        let drg = 0
+        for (let i=0; i < data_list.length; i++)
+        {
+            drg += (data_list[i].visitor_team_score * 0.9)
+        }
+        drg = (drg * 0.9) / data_list.length;
+        console.log("DRG: " + drg);
+        document.getElementById("def_score").innerHTML = drg.toFixed(2);
+
+        // ORG
+        let org = 0
+        org += total_hts * 0.9;
+        document.getElementById("off_score").innerHTML = org.toFixed(2);
+
+
+        let active_players_id_list = []
+        let active_players_name_list = []
+        
+        // TEam indiv stats
+        fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/28", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "7ef7505eeemsh4b7ae28b990ec32p10a9e5jsnf404942f045e",
+                "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const a = response.api
+            console.log(a.players);
+            const b = a.players
+            for (let i=0; i < b.length; i++)
+            {
+                if (b[i].yearsPro > 1)
+                {
+                    const c=b[i];
+                    active_players_id_list.push(c.playerId);
+                    const name = c.firstName + " " + c.lastName;
+                    active_players_name_list.push(name);
+                }
+            }
+            
+            for (var x=0; x<15 ;x++)
+            {
+                var p_id = active_players_id_list[x];
+                var p_name = active_players_name_list[x];
+                $("#team_ranking tr").remove();
                 buildTable(p_id, p_name);
             }
     
