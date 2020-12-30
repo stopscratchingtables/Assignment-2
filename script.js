@@ -1,6 +1,90 @@
 // =======================================
 // =======================================
 // =======================================
+// Individual Stats
+// =======================================
+// =======================================
+// =======================================
+
+function calc_stats() {
+    // Finding the Player's ID
+    var pname = document.getElementById('inputplayername').value;
+    const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
+    const a = fetch(url)
+
+    a.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        let x = data.data
+        console.log(x)
+        for (let i=0; i<x.length; i++)
+        {
+
+            var p_id = x[i].id;
+            var p_name = x[i].first_name + " " +  x[i].last_name;
+            var p_pos = x[i].position;
+            var p_height = `${x[i].height_feet}` + " feet " +  `${x[i].height_inches}` + " inches"
+            var p_team = x[i]['team']['full_name'];
+
+        }
+        get_playerStats(p_id);
+
+        document.getElementById('playername').innerHTML = "Name: " + p_name;
+        document.getElementById('position').innerHTML = "Position: " + p_pos;
+        document.getElementById('height').innerHTML = "Height " + p_height;
+        document.getElementById('t').innerHTML = "Team: " + p_team
+
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}
+
+
+function get_playerStats(p_id) {
+
+    const url_20 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
+    const url_19 = "https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=" + p_id;
+    const url_18 = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=" + p_id;
+    const a = fetch(url_18)
+
+    a.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        let x = data.data;
+        console.log(x);
+
+        for (let i = 0; i<x.length; i++)
+        {
+            var szn = x[i].season
+            var ppg = x[i].pts
+            var rpg = x[i].reb
+            var apg = x[i].ast
+            // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
+            var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover) ;
+
+        }
+        $("#szn_stats tr").remove();
+        document.getElementById('szn_stats').innerHTML = `<tr>
+                                                                <th scope="row">${szn}</th>
+                                                                <td>${ppg.toFixed(2)}</td>
+                                                                <td>${rpg.toFixed(2)}</td>
+                                                                <td>${apg.toFixed(2)}</td>
+                                                                <td>${pm.toFixed(2)}</td>
+                                                            </tr>`
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}
+
+
+
+// =======================================
+// =======================================
+// =======================================
 // Team Stats
 // =======================================
 // =======================================
@@ -817,56 +901,3 @@ function displaySuns() {
         });
     })
 }
-
-
-
-
-
-// =======================================
-// =======================================
-// =======================================
-// Individual Stats
-// =======================================
-// =======================================
-// =======================================
-
-
-function get_playerId() {
-    var pname = document.getElementById('inputplayername').value;
-    const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
-    const a = fetch(url)
-
-    a.then(response => {
-        return response.json()
-    })
-    .then(data => {
-        console.log(data);
-        let x = data.data
-        console.log(x);
-        console.log("Player Name: " + pname + "\n" + "Player ID: " + x.id);
-    })
-    .catch(err => {
-        console.error(err);
-    });
-
-    
-}
-
-
-/*
-function get_playerStats() {
-
-    const url = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2" + pname;
-    const a = fetch(url)
-
-    a.then(response => {
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
-    })
-    .catch(err => {
-        console.error(err);
-    });
-
-} */
