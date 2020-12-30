@@ -1,4 +1,10 @@
+// =======================================
+// =======================================
+// =======================================
 // Team Stats
+// =======================================
+// =======================================
+// =======================================
 
 function displayLakers() {
     const url = "https://www.balldontlie.io/api/v1/teams/14"
@@ -10,7 +16,7 @@ function displayLakers() {
     .then(data => {
         console.log(data)
     })
-
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/lakers.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Los Angeles Lakers';
     /* 
     const response = await fetch(url)
@@ -104,7 +110,8 @@ function displayNets() {
     .then(data => {
         console.log(data)
     })
-
+    
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nets.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Brooklyn Nets';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=3"
@@ -256,6 +263,7 @@ function displayNuggets() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nuggets.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Denver Nuggets';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=8"
@@ -349,6 +357,7 @@ function displayHeat() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/heat.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Miami Heat';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=16"
@@ -442,6 +451,7 @@ function displayCeltics() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/celtics.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Boston Celtics';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=2"
@@ -535,6 +545,7 @@ function displayWarriors() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/warriors.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Golden State Warriors';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=11"
@@ -631,6 +642,7 @@ function displayRaptors() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/raptors.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Toronto Raptors';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=28"
@@ -725,6 +737,7 @@ function displaySuns() {
         console.log(data)
     })
 
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/suns.png" alt="" height="225px" width="325px">'
     document.getElementById('t_name').innerHTML = 'Pheonix Suns';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=24"
@@ -804,3 +817,56 @@ function displaySuns() {
         });
     })
 }
+
+
+
+
+
+// =======================================
+// =======================================
+// =======================================
+// Individual Stats
+// =======================================
+// =======================================
+// =======================================
+
+
+function get_playerId() {
+    var pname = document.getElementById('inputplayername').value;
+    const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
+    const a = fetch(url)
+
+    a.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data);
+        let x = data.data
+        console.log(x);
+        console.log("Player Name: " + pname + "\n" + "Player ID: " + x.id);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+    
+}
+
+
+/*
+function get_playerStats() {
+
+    const url = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2" + pname;
+    const a = fetch(url)
+
+    a.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+} */
