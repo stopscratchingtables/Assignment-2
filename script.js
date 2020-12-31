@@ -103,14 +103,12 @@ function get_playerStats(p_id) {
             console.error(err);
         });
     }
-    buildChart(ppg_list, rpg_list, apg_list, pm_list, "indiv");
+    buildChart(ppg_list, rpg_list, apg_list, pm_list);
 }
 
 
-function buildChart (ppg_list, rpg_list, apg_list, pm_list, type) {
+function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
 
-    if (type=="indiv")
-    {
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
       // The type of chart we want to create
@@ -148,47 +146,6 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list, type) {
           }]
       },
     })
-    }
-    else 
-    {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'bar',
-          
-    
-          // The data for our dataset
-          data: {
-              labels: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
-              datasets: 
-              [{
-                  label: 'Points Per Game',
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: ppg_list,
-                  fill: false
-              }, {
-                  label: 'Rebounds Per Game',
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: rpg_list,
-                  fill: false
-              }, {
-                  label: 'Assists Per Game',
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: apg_list,
-                  fill: false
-              }, {
-                  label: '+/- Per Game',
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: pm_list,
-                  fill: false
-              }]
-          },
-        })
-    }
 }
 
 
@@ -256,6 +213,7 @@ function displayLakers() {
 
     let active_players_id_list = []
     let active_players_name_list = []
+    let active_players_pos_list = []
     // Team indiv stats
     fetch("https://api-nba-v1.p.rapidapi.com/players/teamId/17", {
         "method": "GET",
@@ -272,7 +230,7 @@ function displayLakers() {
         const b = a.players
         for (let i=0; i < b.length; i++)
         {
-            if (b[i].yearsPro > 1)
+            if (b[i].startNba > 2000)
             {
                 const c=b[i];
                 active_players_id_list.push(c.playerId);
@@ -427,18 +385,18 @@ function buildTable(a, b){
                         pm += parseFloat(y[i].plusMinus);
                 }
             }
-    ppg = (ppg/82);
-    apg = (apg/82);
-    rpg = (rpg/82);
-    pm = (pm/82)
+            ppg = (ppg/82);
+            apg = (apg/82);
+            rpg = (rpg/82);
+            pm = (pm/82)
 
-    document.getElementById('team_ranking').innerHTML += `<tr>
-                                                            <th scope="row">${b}</th>
-                                                            <td>${ppg.toFixed(2)}</td>
-                                                            <td>${apg.toFixed(2)}</td>
-                                                            <td>${rpg.toFixed(2)}</td>
-                                                            <td>${pm.toFixed(2)}</td>
-                                                        </tr>`
+            document.getElementById('team_ranking').innerHTML += `<tr>
+                                                                    <th scope="row">${b}</th>
+                                                                    <td>${ppg.toFixed(2)}</td>
+                                                                    <td>${apg.toFixed(2)}</td>
+                                                                    <td>${rpg.toFixed(2)}</td>
+                                                                    <td>${pm.toFixed(2)}</td>
+                                                                </tr>`
         })
         .catch(err => {
             console.error(err);
@@ -1006,7 +964,6 @@ function displaySuns() {
                 $("#team_ranking tr").remove();
                 buildTable(p_id, p_name);
             }
-    
         })
         .catch(err => {
             console.error(err);
