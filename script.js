@@ -45,6 +45,10 @@ function calc_stats() {
 function get_playerStats(p_id) {
     $("#szn_stats tr").remove();
     var url_list = []
+    var ppg_list = []
+    var rpg_list = []
+    var apg_list = []
+    var pm_list = []
     const url_20 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
     const url_19 = "https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=" + p_id;
     const url_18 = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=" + p_id;
@@ -64,16 +68,27 @@ function get_playerStats(p_id) {
             let x = data.data;
             console.log(x);
 
+
             for (let i = 0; i<x.length; i++)
             {
-                var szn = x[i].season
-                var ppg = x[i].pts
-                var rpg = x[i].reb
-                var apg = x[i].ast
+                var szn = x[i].season;
+                var ppg = x[i].pts;
+                var rpg = x[i].reb;
+                var apg = x[i].ast;
+
+
+
                 // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
                 var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover) ;
 
+
             }
+
+            ppg_list.push(ppg);
+            apg_list.push(apg)
+            rpg_list.push(ppg);
+            pm_list.push(pm);
+
             document.getElementById('szn_stats').innerHTML += `<tr>
                                                                     <th scope="row">${szn}</th>
                                                                     <td>${ppg.toFixed(2)}</td>
@@ -81,17 +96,65 @@ function get_playerStats(p_id) {
                                                                     <td>${apg.toFixed(2)}</td>
                                                                     <td>${pm.toFixed(2)}</td>
                                                                 </tr>`
-                                               
+            
+
         })
         .catch(err => {
             console.error(err);
         });
+    } 
+    buildChart(ppg_list, rpg_list, apg_list, pm_list);
+}
+
+function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
+    console.log(ppg_list);
+
+    ///////////// PROBLEM IS OVER HERE /////////
+    var yearsPro_list = []
+    for (let y= 2021; y > 2020 - ppg_list.length + 1;) {
+        y -= 1;
+        yearsPro_list.push(y);
     }
-    const CHART = document.getElementById("lineChart");
-    console.log(CHART);
-    let lineChart = new Chart(CHART), {
-            type: 'line';
-    }
+   console.log(yearsPro_list);
+   //////////////////////////////////////////////
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+      
+
+      // The data for our dataset
+      data: {
+          labels: yearsPro_list,
+          datasets: 
+          [{
+              label: 'Points Per Game',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: ppg_list,
+              fill: false
+          }, {
+              label: 'Rebounds Per Game',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: rpg_list,
+              fill: false
+          }, {
+              label: 'Assists Per Game',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: apg_list,
+              fill: false
+          }, {
+              label: '+/- Per Game',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: pm_list,
+              fill: false
+          }]
+      },
+    })
 }
 
 
