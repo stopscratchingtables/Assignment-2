@@ -81,12 +81,19 @@ function get_playerStats(p_id) {
                                                                     <td>${apg.toFixed(2)}</td>
                                                                     <td>${pm.toFixed(2)}</td>
                                                                 </tr>`
+                                               
         })
         .catch(err => {
             console.error(err);
         });
     }
+    const CHART = document.getElementById("lineChart");
+    console.log(CHART);
+    let lineChart = new Chart(CHART), {
+            type: 'line';
+    }
 }
+
 
 
 
