@@ -104,6 +104,7 @@ function get_playerStats(p_id) {
         });
     }
     buildChart(ppg_list, rpg_list, apg_list, pm_list);
+    playerDesc(ppg_list, rpg_list, apg_list, pm_list)
 }
 
 
@@ -145,6 +146,20 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
           }]
       }
     });
+}
+
+
+function playerDesc(ppg_list, rpg_list, apg_list, pm_list) {
+    var pointsDesc = ""
+    var rpg_list = ""
+    var assistsDesc = ""
+    var pm_list = ""
+
+    if (ppg[0] > 18)
+    {
+
+    }
+
 }
 
 
