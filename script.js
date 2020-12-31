@@ -71,6 +71,7 @@ function get_playerStats(p_id) {
 
             for (let i = 0; i<x.length; i++)
             {
+
                 var szn = x[i].season;
                 var ppg = x[i].pts;
                 var rpg = x[i].reb;
@@ -96,33 +97,20 @@ function get_playerStats(p_id) {
                                                                     <td>${apg.toFixed(2)}</td>
                                                                     <td>${pm.toFixed(2)}</td>
                                                                 </tr>`
-            
-
+                                                                
         })
         .catch(err => {
             console.error(err);
         });
-    } 
-    buildChart(ppg_list, rpg_list, apg_list, pm_list);
+    }
+    buildChart(ppg_list, rpg_list, apg_list, pm_list, "indiv");
 }
 
 
-function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
-    /* var yearsPro_list = []
-    for (var y = 2021; y > 2020 - ppg_list.length + 1;) {
-        y -=
-        console.log(y);
-        yearsPro_list.push(y)
-    }
-    console.log(yearsPro_list); */
-    console.log(ppg_list);
-    console.log("length of list is " +ppg_list.length);
-    calculations = 2020 - ppg_list.length + 1
-    for (var i = 2020; i > calculations; i--)
-    {
-        console.log(i);
-    }
+function buildChart (ppg_list, rpg_list, apg_list, pm_list, type) {
 
+    if (type=="indiv")
+    {
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
       // The type of chart we want to create
@@ -131,7 +119,7 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
 
       // The data for our dataset
       data: {
-          labels: yearsPro_list,
+          labels: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
           datasets: 
           [{
               label: 'Points Per Game',
@@ -160,6 +148,47 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
           }]
       },
     })
+    }
+    else 
+    {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+          
+    
+          // The data for our dataset
+          data: {
+              labels: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
+              datasets: 
+              [{
+                  label: 'Points Per Game',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: ppg_list,
+                  fill: false
+              }, {
+                  label: 'Rebounds Per Game',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: rpg_list,
+                  fill: false
+              }, {
+                  label: 'Assists Per Game',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: apg_list,
+                  fill: false
+              }, {
+                  label: '+/- Per Game',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: pm_list,
+                  fill: false
+              }]
+          },
+        })
+    }
 }
 
 
