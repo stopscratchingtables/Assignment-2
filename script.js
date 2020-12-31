@@ -56,7 +56,7 @@ function get_playerStats(p_id) {
     const url_16 = "https://www.balldontlie.io/api/v1/season_averages?season=2016&player_ids[]=" + p_id;
     const url_15 = "https://www.balldontlie.io/api/v1/season_averages?season=2015&player_ids[]=" + p_id;
     const url_14 = "https://www.balldontlie.io/api/v1/season_averages?season=2014&player_ids[]=" + p_id;
-    url_list.push(url_14, url_15, url_16, url_17, url_18, url_19, url_20);
+    url_list.push(url_20, url_19, url_18, url_17, url_16, url_15, url_14);
     for (i=0; i<url_list.length; i++)
     {
         const a = fetch(url_list[i]);
@@ -87,8 +87,8 @@ function get_playerStats(p_id) {
 
             ppg_list.push(ppg);
             apg_list.push(apg)
-            rpg_list.push(ppg);
-            pm_list.push(pm);
+            rpg_list.push(rpg);
+            pm_list.push(pm/82 * 10);
 
             document.getElementById('szn_stats').innerHTML += `<tr>
                                                                     <th scope="row">${szn}</th>
@@ -113,7 +113,6 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
     var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'line',
-      
 
       // The data for our dataset
       data: {
@@ -123,29 +122,29 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
               label: 'Points Per Game',
               backgroundColor: 'rgb(255, 99, 132)',
               borderColor: 'rgb(255, 99, 132)',
-              data: ppg_list,
+              data: ppg_list.reverse(),
               fill: false
           }, {
               label: 'Rebounds Per Game',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: rpg_list,
+              backgroundColor: 'rgb(99, 177, 255)',
+              borderColor: 'rgb(99, 177, 255)',
+              data: rpg_list.reverse(),
               fill: false
           }, {
               label: 'Assists Per Game',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: apg_list,
+              backgroundColor: 'rgb(175, 129, 222)',
+              borderColor: 'rgb(175, 129, 222)',
+              data: apg_list.reverse(),
               fill: false
           }, {
               label: '+/- Per Game',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: pm_list,
+              backgroundColor: 'rgb(46, 219, 31)',
+              borderColor: 'rgb(46, 219, 31)',
+              data: pm_list.reverse(),
               fill: false
           }]
-      },
-    })
+      }
+    });
 }
 
 
@@ -350,6 +349,11 @@ function buildTable(a, b){
     var apg = 0;
     var rpg = 0;
     var pm = 0;
+    var ftp = 0;
+    var pos = "";
+    var blks = 0;
+    var stls = 0;
+    var fouls = 0;
     fetch("https://api-nba-v1.p.rapidapi.com/statistics/players/playerId/" + a, {
         "method": "GET",
         "headers": {
@@ -362,6 +366,7 @@ function buildTable(a, b){
         console.log(response);
         const x = response.api
         const y = x.statistics
+
         for(let i=0; i<82; i++)
         {
             if (y.length >= 82)
@@ -380,22 +385,48 @@ function buildTable(a, b){
                         rpg += parseFloat(y[i].totReb);
                 }
 
-                if (y[i].plusMinus > 0)
+                if (y[i].plusMinus > 0 || y[i].plusMinus < 0 )
                 {
                         pm += parseFloat(y[i].plusMinus);
                 }
+
+                if (y[i].ftp > 0)
+                {
+                        ftp += parseFloat(y[i].ftp);
+                }
+                if (y[i].blocks > 0)
+                {
+                        blks += parseFloat(y[i].blocks);
+                }
+                if (y[i].steals > 0)
+                {
+                        stls += parseFloat(y[i].steals);
+                }
+                if (y[i].pFouls > 0)
+                {
+                        fouls += parseFloat(y[i].pFouls);
+                }
+                
             }
             ppg = (ppg/82);
             apg = (apg/82);
             rpg = (rpg/82);
             pm = (pm/82)
+            ftp = (ftp/82)
+            pos = y[0]['pos']
+            blks = (blks/82)
+            stls = (stls/82)
+            fouls = (fouls/82)
 
             document.getElementById('team_ranking').innerHTML += `<tr>
-                                                                    <th scope="row">${b}</th>
-                                                                    <td>${ppg.toFixed(2)}</td>
-                                                                    <td>${apg.toFixed(2)}</td>
-                                                                    <td>${rpg.toFixed(2)}</td>
-                                                                    <td>${pm.toFixed(2)}</td>
+                                                                    <th scope="row">${b}(${pos})</th>
+                                                                    <td>${ppg.toFixed(1)}</td>
+                                                                    <td>${apg.toFixed(1)}</td>
+                                                                    <td>${rpg.toFixed(1)}</td>
+                                                                    <td>${blks.toFixed(1)}</td>
+                                                                    <td>${stls.toFixed(1)}</td>
+                                                                    <td>${fouls.toFixed(1)}</td>
+                                                                    <td>${pm.toFixed(1)}</td>
                                                                 </tr>`
         })
         .catch(err => {
