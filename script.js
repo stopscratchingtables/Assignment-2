@@ -108,14 +108,20 @@ function get_playerStats(p_id) {
 
 
 function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
-
-    var yearsPro_list = []
+    /* var yearsPro_list = []
     for (var y = 2021; y > 2020 - ppg_list.length + 1;) {
-        y -= 1
+        y -=
         console.log(y);
         yearsPro_list.push(y)
     }
-    console.log(yearsPro_list);
+    console.log(yearsPro_list); */
+    console.log(ppg_list);
+    console.log(ppg_list.length);
+    calculations = 2020 - ppg_list.length + 1
+    for (var i = 2020; i > calculations; i--)
+    {
+        console.log("The list length is : " + i);
+    }
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
