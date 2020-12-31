@@ -103,6 +103,7 @@ function get_playerStats(p_id) {
             console.error(err);
         });
     } 
+    buildChart(ppg_list, rpg_list, apg_list, pm_list);
 }
 
 
@@ -115,7 +116,7 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
     }
     console.log(yearsPro_list); */
     console.log(ppg_list);
-    console.log("length of list is " + ppg_list.length);
+    console.log("length of list is " +ppg_list.length);
     calculations = 2020 - ppg_list.length + 1
     for (var i = 2020; i > calculations; i--)
     {
