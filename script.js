@@ -100,7 +100,7 @@ function displayLakers() {
     .then(data => {
         console.log(data)
     })
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/lakers.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/lakers.png" alt="" height="225px" width="350px">'
     document.getElementById('t_name').innerHTML = 'Los Angeles Lakers';
     /* 
     const response = await fetch(url)
@@ -195,7 +195,7 @@ function displayNets() {
         console.log(data)
     })
     
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nets.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nets.png" alt="" height="225px" width="275px">'
     document.getElementById('t_name').innerHTML = 'Brooklyn Nets';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=3"
@@ -347,7 +347,7 @@ function displayNuggets() {
         console.log(data)
     })
 
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nuggets.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/nuggets.png" alt="" height="225px" width="275px">'
     document.getElementById('t_name').innerHTML = 'Denver Nuggets';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=8"
@@ -441,7 +441,7 @@ function displayHeat() {
         console.log(data)
     })
 
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/heat.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/heat.png" alt="" height="250px" width="275px">'
     document.getElementById('t_name').innerHTML = 'Miami Heat';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=16"
@@ -535,7 +535,7 @@ function displayCeltics() {
         console.log(data)
     })
 
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/celtics.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/celtics.png" alt="" height="225px" width="275px">'
     document.getElementById('t_name').innerHTML = 'Boston Celtics';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=2"
@@ -629,7 +629,7 @@ function displayWarriors() {
         console.log(data)
     })
 
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/warriors.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/warriors.png" alt="" height="250px" width="275px">'
     document.getElementById('t_name').innerHTML = 'Golden State Warriors';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=11"
@@ -726,7 +726,7 @@ function displayRaptors() {
         console.log(data)
     })
 
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/raptors.png" alt="" height="225px" width="325px">'
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/raptors.png" alt="" height="260px" width="310px">'
     document.getElementById('t_name').innerHTML = 'Toronto Raptors';
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=28"
