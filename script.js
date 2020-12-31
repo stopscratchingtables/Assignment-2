@@ -43,41 +43,49 @@ function calc_stats() {
 
 
 function get_playerStats(p_id) {
-
+    $("#szn_stats tr").remove();
+    var url_list = []
     const url_20 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
     const url_19 = "https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=" + p_id;
     const url_18 = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=" + p_id;
-    const a = fetch(url_19)
+    const url_17 = "https://www.balldontlie.io/api/v1/season_averages?season=2017&player_ids[]=" + p_id;
+    const url_16 = "https://www.balldontlie.io/api/v1/season_averages?season=2016&player_ids[]=" + p_id;
+    const url_15 = "https://www.balldontlie.io/api/v1/season_averages?season=2015&player_ids[]=" + p_id;
+    const url_14 = "https://www.balldontlie.io/api/v1/season_averages?season=2014&player_ids[]=" + p_id;
+    url_list.push(url_14, url_15, url_16, url_17, url_18, url_19, url_20);
+    for (i=0; i<url_list.length; i++)
+    {
+        const a = fetch(url_list[i]);
 
-    a.then(response => {
-        return response.json()
-    })
-    .then(data => {
-        let x = data.data;
-        console.log(x);
+        a.then(response => {
+            return response.json()
+        })
+        .then(data => {
+            let x = data.data;
+            console.log(x);
 
-        for (let i = 0; i<x.length; i++)
-        {
-            var szn = x[i].season
-            var ppg = x[i].pts
-            var rpg = x[i].reb
-            var apg = x[i].ast
-            // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
-            var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover) ;
+            for (let i = 0; i<x.length; i++)
+            {
+                var szn = x[i].season
+                var ppg = x[i].pts
+                var rpg = x[i].reb
+                var apg = x[i].ast
+                // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
+                var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover) ;
 
-        }
-        $("#szn_stats tr").remove();
-        document.getElementById('szn_stats').innerHTML = `<tr>
-                                                                <th scope="row">${szn}</th>
-                                                                <td>${ppg.toFixed(2)}</td>
-                                                                <td>${rpg.toFixed(2)}</td>
-                                                                <td>${apg.toFixed(2)}</td>
-                                                                <td>${pm.toFixed(2)}</td>
-                                                            </tr>`
-    })
-    .catch(err => {
-        console.error(err);
-    });
+            }
+            document.getElementById('szn_stats').innerHTML += `<tr>
+                                                                    <th scope="row">${szn}</th>
+                                                                    <td>${ppg.toFixed(2)}</td>
+                                                                    <td>${rpg.toFixed(2)}</td>
+                                                                    <td>${apg.toFixed(2)}</td>
+                                                                    <td>${pm.toFixed(2)}</td>
+                                                                </tr>`
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    }
 }
 
 
