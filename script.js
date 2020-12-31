@@ -106,17 +106,16 @@ function get_playerStats(p_id) {
     buildChart(ppg_list, rpg_list, apg_list, pm_list);
 }
 
-function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
-    console.log(ppg_list);
 
-    ///////////// PROBLEM IS OVER HERE /////////
+function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
+
     var yearsPro_list = []
-    for (let y= 2021; y > 2020 - ppg_list.length + 1;) {
-        y -= 1;
-        yearsPro_list.push(y);
+    for (var y = 2021; y > 2020 - ppg_list.length + 1;) {
+        y -= 1
+        console.log(y);
+        yearsPro_list.push(y)
     }
-   console.log(yearsPro_list);
-   //////////////////////////////////////////////
+    console.log(yearsPro_list);
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
