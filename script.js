@@ -4,7 +4,7 @@
 // =======================================
 // =======================================
 
-let darkMode = localStorage.getItem('darkMode')
+/*let darkMode = localStorage.getItem('darkMode')
 const darkModeToggle = document.querySelector('#darkModebutton')
 
 // check if dark mode enabled
@@ -44,7 +44,7 @@ function darkMode() {
         disableDarkMode();
     }
 
-}
+} */
 
 
 
@@ -78,12 +78,15 @@ function calc_stats() {
             var p_team = x[i]['team']['full_name'];
 
         }
-        get_playerStats(p_id);
 
         document.getElementById('playername').innerHTML = "Name: " + p_name;
         document.getElementById('position').innerHTML = "Position: " + p_pos;
         document.getElementById('height').innerHTML = "Height " + p_height;
-        document.getElementById('t').innerHTML = "Team: " + p_team
+        document.getElementById('t').innerHTML = "Team: " + p_team;
+
+        get_playerStats(p_id);
+
+
 
     })
     .catch(err => {
@@ -167,7 +170,7 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
 
       // The data for our dataset
       data: {
-          labels: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
+          labels: [2020, 2019, 2018, 2017, 2016, 2015, 2014],
           datasets: 
           [{
               label: 'Points Per Game',
