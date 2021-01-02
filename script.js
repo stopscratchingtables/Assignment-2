@@ -1090,7 +1090,12 @@ function displayStats_byol(pname) {
 
         }
         
-        document.getElementById("p_name_build").innerHTML = 
+        document.getElementById("p_name_build_one").innerHTML = `
+                                                            <p>${p_name} (${p_pos})</p>
+                                                            <p>${p_height}</p>
+                                                            <p>${p_team}</p>
+                                                            `
+        
 
     })
     .catch(err => {
