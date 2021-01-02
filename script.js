@@ -1,5 +1,18 @@
 // =======================================
 // =======================================
+// Dark Mode
+// =======================================
+// =======================================
+
+
+
+
+
+
+
+
+// =======================================
+// =======================================
 // =======================================
 // Individual Stats
 // =======================================
@@ -1031,42 +1044,52 @@ function displaySuns() {
 
 function playerone_byol() {
 
-    let pname = document.getElementById("player_one")
-    displayStats_byol(pname);
+    let pname = document.getElementById("player_one").value;
+    var type = "one"
+
+    displayStats_byol(pname, type);
 
 }
 
 function playertwo_byol() {
 
-    let pname = document.getElementById("player_two")
+    let pname = document.getElementById("player_two").value;
+    var type = "two"
+
+    displayStats_byol(pname, type);
 
 }
 
 function playerthree_byol() {
 
-    let pname = document.getElementById("player_three")
+    let pname = document.getElementById("player_three").value;
+    var type = "three"
 
-}
-
-function playerthree_byol() {
-
-    let pname = document.getElementById("player_three")
+    displayStats_byol(pname, type);
 
 }
 
 function playerfour_byol() {
 
-    let pname = document.getElementById("player_four")
+    let pname = document.getElementById("player_four").value;
+    var type = "four"
+
+    displayStats_byol(pname, type);
 
 }
 
 function playerfive_byol() {
 
-    let pname = document.getElementById("player_five")
+    let pname = document.getElementById("player_five").value;
+    var type = "five"
+
+    displayStats_byol(pname, type);
 
 }
 
-function displayStats_byol(pname) {
+
+
+function displayStats_byol(pname, type) {
 
     const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
     const a = fetch(url)
@@ -1089,17 +1112,91 @@ function displayStats_byol(pname) {
             var p_team = x[i]['team']['full_name'];
 
         }
-        
-        document.getElementById("p_name_build_one").innerHTML = `
-                                                            <p>${p_name} (${p_pos})</p>
-                                                            <p>${p_height}</p>
-                                                            <p>${p_team}</p>
-                                                            `
-        
 
+    const url2 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
+    const a = fetch(url2);
+
+    a.then(response => {
+        return response.json()
     })
-    .catch(err => {
-        console.error(err);
-    });
+    .then(data => {
+        let x = data.data;
+        console.log(x);
 
+        for (let i = 0; i<x.length; i++)
+            {
+                var ppg = x[i].pts;
+                var rpg = x[i].reb;
+                var apg = x[i].ast;
+                // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
+                // var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover);
+            }
+
+        if (type == "one")
+        {
+            document.getElementById("p_name_build_one").innerHTML = `
+            <p>${p_name} (${p_pos})</p>
+            <p>${p_height}</p>
+            <p>${p_team}</p>
+            `
+
+            document.getElementById("player1_ppg").innerHTML = ppg;
+            document.getElementById("player1_rpg").innerHTML = rpg;
+            document.getElementById("player1_apg").innerHTML = apg;
+        }
+
+        if (type == "two")
+        {
+            document.getElementById("p_name_build_two").innerHTML = `
+            <p>${p_name} (${p_pos})</p>
+            <p>${p_height}</p>
+            <p>${p_team}</p>
+            `
+
+            document.getElementById("player2_ppg").innerHTML = ppg;
+            document.getElementById("player2_rpg").innerHTML = rpg;
+            document.getElementById("player2_apg").innerHTML = apg;
+        }
+
+        if (type == "three")
+        {
+            document.getElementById("p_name_build_three").innerHTML = `
+            <p>${p_name} (${p_pos})</p>
+            <p>${p_height}</p>
+            <p>${p_team}</p>
+            `
+
+            document.getElementById("player3_ppg").innerHTML = ppg;
+            document.getElementById("player3_rpg").innerHTML = rpg;
+            document.getElementById("player3_apg").innerHTML = apg;
+        }
+
+        if (type == "four")
+        {
+            document.getElementById("p_name_build_four").innerHTML = `
+            <p>${p_name} (${p_pos})</p>
+            <p>${p_height}</p>
+            <p>${p_team}</p>
+            `
+
+            document.getElementById("player4_ppg").innerHTML = ppg;
+            document.getElementById("player4_rpg").innerHTML = rpg;
+            document.getElementById("player4_apg").innerHTML = apg;
+        }
+
+        if (type == "five")
+        {
+            document.getElementById("p_name_build_five").innerHTML = `
+            <p>${p_name} (${p_pos})</p>
+            <p>${p_height}</p>
+            <p>${p_team}</p>
+            `
+
+            document.getElementById("player5_ppg").innerHTML = ppg;
+            document.getElementById("player5_rpg").innerHTML = rpg;
+            document.getElementById("player5_apg").innerHTML = apg;
+        }
+
+        })
+    })
 }

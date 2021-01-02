@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Basketball Search - Build Your own Website!</title>
+	<title>Basketball Search - Build Your own Starting 5!</title>
 </head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
     <link rel="stylesheet" href="index.css">
@@ -32,7 +32,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <div class="nav-link disabled" href="#">
+              <div onclick="darkMode" class="nav-link" href="#">
                   <button>Dark Mode</button>
               </div>
             </li>
@@ -43,7 +43,7 @@
       <div class="container mt-5 bg-light">
         <div class="row">
           <div class="col-xl border medium border-dark shadow-sm">
-            <h1 id="title"><u><em>Player Statistics</em></u></h1>
+            <h1 id="title"><u><em>Build Your Own Starting 5!</em></u></h1>
             <p class="ml-5 my-5" id="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -70,7 +70,7 @@
                     <th scope="row">
                       <input type="text" name="" id="player_one">
                       <p id="p_name_build_one"></p>
-                      <button onclick="player1_byol()" class="btn btn-primary">Submit</button>
+                      <button onclick="playerone_byol()" class="btn btn-primary">Submit</button>
                     </th>
                     <td id="player1_ppg">-</td>
                     <td id="player1_rpg">-</td>
@@ -78,9 +78,9 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="">
+                      <input type="text" name="" id="player_two">
                       <p id="p_name_build_two"></p>
-                      <button class="btn btn-primary">Submit</button>
+                      <button onclick="playertwo_byol()" class="btn btn-primary">Submit</button>
                     </th>
                     <td id="player2_ppg">-</td>
                     <td id="player2_rpg">-</td>
@@ -88,9 +88,9 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="">
+                      <input type="text" name="" id="player_three">
                       <p id="p_name_build_three"></p>
-                      <button class="btn btn-primary">Submit</button>
+                      <button onclick="playerthree_byol()" class="btn btn-primary">Submit</button>
                     </th>
                     <td id="player3_ppg">-</td>
                     <td id="player3_rpg">-</td>
@@ -98,19 +98,19 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="">
+                      <input type="text" name="" id="player_four">
                       <p id="p_name_build_four"></p>
-                      <button class="btn btn-primary">Submit</button>
+                      <button onclick="playerfour_byol()" class="btn btn-primary">Submit</button>
                     </th>
                     <td id="player4_ppg">-</td>
                     <td id="player4_rpg">-</td>
-                    <td id="plyter4_apg">-</td>
+                    <td id="player4_apg">-</td>
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="">
+                      <input type="text" name="" id="player_five">
                       <p id="p_name_build_five"></p>
-                      <button class="btn btn-primary">Submit</button>
+                      <button onclick="playerfive_byol()" class="btn btn-primary">Submit</button>
                     </th>
                     <td id="player5_ppg">-</td>
                     <td id="player5_rpg">-</td>
@@ -118,6 +118,10 @@
                   </tr>
                 </tbody>
             </table>
+
+            <div>
+              <h2><em>Starting Five Overview</em></h2>
+            </div>
 
             </div>
         </div>
