@@ -4,7 +4,11 @@
 // =======================================
 // =======================================
 
+function darkMode() {
+    let darkMode = localStorage.getItem('darkMode')
 
+
+}
 
 
 
