@@ -1016,3 +1016,85 @@ function displaySuns() {
         });
     })
 }
+
+
+
+
+// =======================================
+// =======================================
+// =======================================
+// Build your own lineup
+// =======================================
+// =======================================
+// =======================================
+
+
+function playerone_byol() {
+
+    let pname = document.getElementById("player_one")
+    displayStats_byol(pname);
+
+}
+
+function playertwo_byol() {
+
+    let pname = document.getElementById("player_two")
+
+}
+
+function playerthree_byol() {
+
+    let pname = document.getElementById("player_three")
+
+}
+
+function playerthree_byol() {
+
+    let pname = document.getElementById("player_three")
+
+}
+
+function playerfour_byol() {
+
+    let pname = document.getElementById("player_four")
+
+}
+
+function playerfive_byol() {
+
+    let pname = document.getElementById("player_five")
+
+}
+
+function displayStats_byol(pname) {
+
+    const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
+    const a = fetch(url)
+
+    a.then(response => {
+        return response.json()
+    })
+    .then(data => {
+        let x = data.data
+        console.log(x)
+
+        
+        for (let i=0; i<x.length; i++)
+        {
+
+            var p_id = x[i].id;
+            var p_name = x[i].first_name + " " +  x[i].last_name;
+            var p_pos = x[i].position;
+            var p_height = `${x[i].height_feet}` + " feet " +  `${x[i].height_inches}` + " inches"
+            var p_team = x[i]['team']['full_name'];
+
+        }
+        
+        document.getElementById("p_name_build").innerHTML = 
+
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+}
