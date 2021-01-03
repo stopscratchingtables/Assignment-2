@@ -1,6 +1,6 @@
 # Assignment 2- Basketball Statistical Search Website
 
-As a basketball fan, I always find myself 
+As a basketball fan, I always find myself immersing
  
 ## Design Process
 
@@ -13,8 +13,7 @@ As a basketball fan, I always find myself
 
 ## Technologies Used
 
-
-
+API, JQuery, Javascript, Bootstrap, HTML, CSS
 
 ## Testing
 
