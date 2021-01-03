@@ -1313,5 +1313,9 @@ function findResults_byol() {
         plm_msg = "You have constructed a team that may arise some defensive issues"
         plm_grade = "C"
     }
+
+
+    document.getElementById("strengths_byol").innerHTML = off_msg;
+    document.getElementById("off_grade").innerHTML = off_grade;
     
 }
