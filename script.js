@@ -1,52 +1,18 @@
-// =======================================
-// =======================================
 // Dark Mode
-// =======================================
-// =======================================
 
-/*let darkMode = localStorage.getItem('darkMode')
-const darkModeToggle = document.querySelector('#darkModebutton')
+const containers = document.querySelector('.container');
+const navbar = document.querySelector(".navbar");
+const toggle = document.getElementById('darkModebutton');
 
-// check if dark mode enabled
-// if enabled, turn off
-// if disabled, turn on
+const changeBackground = (e) => {
+    containers.classList.toggle("bg-dark");
+    containers.classList.toggle("text-light");
 
-const enableDarkMode =  () => {
-    
-    document.nav.classList.add('')
-    //document.body.classList.add('darkmode');
-    localStorage.setItem('darkMode', "enabled");
-
+    navbar.classList.toggle("bg-dark");
+    navbar.classList.toggle("text-light");
 }
 
-const disableDarkMode = () => {
-
-    document.body.classList.remove("darkmode");
-    localStorage.setItem("darkMode", null)
-
-}
-
-if (darkMode === 'enabled') {
-    enableDarkMode();
-}
-
-function darkMode() {
-
-    darkMode = localStorage.getItem('darkMode');
-
-    if (darkMode !== 'enabled')
-    {
-        enableDarkMode();
-        console.log(darkMode);
-    }
-    else 
-    {
-        disableDarkMode();
-    }
-
-} */
-
-
+toggle.addEventListener('click', changeBackground);
 
 // =======================================
 // =======================================
