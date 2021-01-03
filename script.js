@@ -1171,8 +1171,8 @@ function displayStats_byol(pname, type) {
             document.getElementById("player1_apg").innerHTML = apg;
 
             localStorage.setItem("p1_ppg", ppg);
-            localStorage.setItem("p1_rpg", ppg);
-            localStorage.setItem("p1_apg", ppg);
+            localStorage.setItem("p1_rpg", rpg);
+            localStorage.setItem("p1_apg", apg);
         }
 
         if (type == "two")
@@ -1188,8 +1188,8 @@ function displayStats_byol(pname, type) {
             document.getElementById("player2_apg").innerHTML = apg;
 
             localStorage.setItem("p2_ppg", ppg);
-            localStorage.setItem("p2_rpg", ppg);
-            localStorage.setItem("p2_apg", ppg);
+            localStorage.setItem("p2_rpg", rpg);
+            localStorage.setItem("p2_apg", apg);
         }
 
         if (type == "three")
@@ -1205,8 +1205,8 @@ function displayStats_byol(pname, type) {
             document.getElementById("player3_apg").innerHTML = apg;
 
             localStorage.setItem("p3_ppg", ppg);
-            localStorage.setItem("p3_rpg", ppg);
-            localStorage.setItem("p3_apg", ppg);
+            localStorage.setItem("p3_rpg", rpg);
+            localStorage.setItem("p3_apg", apg);
         }
 
         if (type == "four")
@@ -1222,8 +1222,8 @@ function displayStats_byol(pname, type) {
             document.getElementById("player4_apg").innerHTML = apg;
 
             localStorage.setItem("p4_ppg", ppg);
-            localStorage.setItem("p4_rpg", ppg);
-            localStorage.setItem("p4_apg", ppg);
+            localStorage.setItem("p4_rpg", rpg);
+            localStorage.setItem("p4_apg", apg);
         }
 
         if (type == "five")
@@ -1239,8 +1239,8 @@ function displayStats_byol(pname, type) {
             document.getElementById("player5_apg").innerHTML = apg;
 
             localStorage.setItem("p5_ppg", ppg);
-            localStorage.setItem("p5_rpg", ppg);
-            localStorage.setItem("p5_apg", ppg);
+            localStorage.setItem("p5_rpg", rpg);
+            localStorage.setItem("p5_apg", apg);
         }
 
         })
@@ -1253,69 +1253,79 @@ function findResults_byol() {
     var team_ppg = 0;
     var team_apg = 0;
     var team_rpg = 0;
-    team_ppg = localStorage.getItem("p1_ppg") + localStorage.getItem("p2_ppg") + localStorage.getItem("p3_ppg") +
-                localStorage.getItem("p4_ppg") + localStorage.getItem("p5_ppg");
-
-    team_apg = localStorage.getItem("p1_apg") + localStorage.getItem("p2_apg") + localStorage.getItem("p3_apg") +
-                localStorage.getItem("p4_apg") + localStorage.getItem("p5_apg");
-
-    team_rpg = localStorage.getItem("p1_rpg") + localStorage.getItem("p2_rpg") + localStorage.getItem("p3_rpg") +
-                localStorage.getItem("p4_rpg") + localStorage.getItem("p5_rpg");
+    team_ppg = parseFloat(localStorage.getItem("p1_ppg")) + parseFloat(localStorage.getItem("p2_ppg")) + parseFloat(localStorage.getItem("p3_ppg")) + parseFloat(localStorage.getItem("p4_ppg")) + parseFloat(localStorage.getItem("p5_ppg"));
+    team_apg = parseFloat(localStorage.getItem("p1_apg")) + parseFloat(localStorage.getItem("p2_apg")) + parseFloat(localStorage.getItem("p3_apg")) + parseFloat(localStorage.getItem("p4_apg")) + parseFloat(localStorage.getItem("p5_apg"));
+    team_rpg = parseFloat(localStorage.getItem("p1_rpg")) + parseFloat(localStorage.getItem("p2_rpg")) + parseFloat(localStorage.getItem("p3_rpg")) + parseFloat(localStorage.getItem("p4_rpg")) + parseFloat(localStorage.getItem("p5_rpg"));
+    console.log(team_ppg, team_apg, team_rpg)
 
     // TEAM PPG
     if (team_ppg > 80)
     {
-        off_msg = "You have constructed an scoring-minded team"
-        off_grade = "A"
+        var msg = "You have constructed an scoring-minded team"
+        var grade = "A";
+        document.getElementById("strengths_byol").innerHTML = msg;
+        document.getElementById("off_grade").innerHTML = grade;
     }
     else if (team_ppg < 80 && team_ppg > 60)
     {
-        off_msg = "You have constructed a competitive scoring team"
-        off_grade = "B"
+        var msg = "You have constructed a competitive scoring team"
+        var grade = "B";
+        document.getElementById("strengths_byol").innerHTML = msg;
+        document.getElementById("off_grade").innerHTML = grade;
     }
-    else
+    else if (team_ppg < 60)
     {
-        off_msg = "You have constructed a team that may struggle in scoring"
-        off_grade = "C"
+        var msg = "You have constructed a team that may struggle in scoring"
+        var grade = "C";
+        document.getElementById("weakness_byol").innerHTML = msg;
+        document.getElementById("off_grade").innerHTML = grade;
     }
 
     
     // TEAM APG
-    if (apg > 45)
+    if (team_apg > 45)
     {
-        plm_msg = "You have constructed a very unselfish team, willing to pass for others"
-        plm_grade = "A"
+        var msg = ". You have constructed a very unselfish team, willing to pass for others"
+        var grade = "A"
+        document.getElementById("strengths_byol").innerHTML += msg;
+        document.getElementById("plm_grade").innerHTML = grade;
     }
     else if (team_ppg < 42 && team_ppg > 25)
     {
-        plm_msg = "You have constructed a team that can initate an offensive system properly"
-        plm_grade = "B"
+        var msg = ". You have constructed a team that can initate an offensive system properly"
+        var grade = "B"
+        document.getElementById("strengths_byol").innerHTML += msg;
+        document.getElementById("plm_grade").innerHTML = grade;
     }
     else
     {
-        plm_msg = "You have constructed a team that may have chemistry and passing issues"
-        plm_grade = "C"
+        var msg = ". You have constructed a team that may have chemistry and passing issues"
+        var grade = "C"
+        document.getElementById("weakness_byol").innerHTML += msg;
+        document.getElementById("plm_grade").innerHTML = grade;
     }
 
     // TEAM RPG
-    if (rpg > 42)
+    if (team_rpg > 42)
     {
-        plm_msg = "You have constructed a team that is willing to crash the boards on deffence"
-        plm_grade = "A"
+        var msg = ". You have constructed a team that is willing to crash the boards on deffence"
+        var grade = "A"
+        document.getElementById("strengths_byol").innerHTML += msg;
+        document.getElementById("def_grade").innerHTML = grade;
     }
     else if (team_rpg < 42 && team_rpg > 25)
     {
-        plm_msg = "You have constructed a team that can adequatley play defence"
-        plm_grade = "B"
+        var msg = ". You have constructed a team that can adequatley play defence"
+        var grade = "B"
+        document.getElementById("strengths_byol").innerHTML += msg;
+        document.getElementById("def_grade").innerHTML = grade;
     }
     else
     {
-        plm_msg = "You have constructed a team that may arise some defensive issues"
-        plm_grade = "C"
+        var msg = ". You have constructed a team that may arise some defensive issues"
+        var grade = "C"
+        document.getElementById("weakness_byol").innerHTML += msg;
+        document.getElementById("def_grade").innerHTML = grade;
     }
-
-
-    document.getElementById("strengths_byol").innerHTML = off_msg;
-    document.getElementById("off_grade").innerHTML = off_grade;
     
 }
