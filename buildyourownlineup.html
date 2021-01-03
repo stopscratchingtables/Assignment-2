@@ -86,7 +86,7 @@
                 <tbody>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="player_one">
+                      <input type="text" name="" id="player_one" placeholder="Example: Luka Doncic">
                       <p id="p_name_build_one"></p>
                       <button onclick="playerone_byol()" class="btn btn-primary">Submit</button>
                     </th>
@@ -96,7 +96,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="player_two">
+                      <input type="text" name="" id="player_two" placeholder="Example: Joe Harris">
                       <p id="p_name_build_two"></p>
                       <button onclick="playertwo_byol()" class="btn btn-primary">Submit</button>
                     </th>
@@ -106,7 +106,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="player_three">
+                      <input type="text" name="" id="player_three" placeholder="Example: Kevin Durant">
                       <p id="p_name_build_three"></p>
                       <button onclick="playerthree_byol()" class="btn btn-primary">Submit</button>
                     </th>
@@ -116,7 +116,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="player_four">
+                      <input type="text" name="" id="player_four" placeholder="Example: Anthony Davis">
                       <p id="p_name_build_four"></p>
                       <button onclick="playerfour_byol()" class="btn btn-primary">Submit</button>
                     </th>
@@ -126,7 +126,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <input type="text" name="" id="player_five">
+                      <input type="text" name="" id="player_five" placeholder="Example: Rudy Gobert">
                       <p id="p_name_build_five"></p>
                       <button onclick="playerfive_byol()" class="btn btn-primary">Submit</button>
                     </th>
@@ -138,7 +138,43 @@
             </table>
 
             <div>
-              <h2><em>Starting Five Overview</em></h2>
+                <h1 class="margin"><em><u>Basketball Terminologies</u></em></h1>
+                <p>bunch of body text</p>
+                <button onclick="findResults_byol()" type="button" class="btn btn-primary w-25">Find Results</button>
+                <div class="title">
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card text-center">
+                    <img src="media/terminologies/pointgaurd.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h2 class="card-title">Stregnths</h2>
+                        <p class="card-text" id="strengths_byol"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center">
+                    <img src="media/terminologies/shootinggaurd.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h2 class="card-title">Weaknesses</h2>
+                      <p class="card-text" id="strengths_byol"></p>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center">
+                    <img src="media/terminologies/smallforward.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h2 class="card-title">Gradings</h2>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><p>Offence: <span class="off_grade">-</span></p></li>
+                        <li class="list-group-item"><p>Defence: <span class="def_grade">-</span></p></li>
+                        <li class="list-group-item"><p>Playmaking: <span class="plm_grade">-</span></p></li>
+                      </ul>
+              </div>
+      
             </div>
 
             </div>

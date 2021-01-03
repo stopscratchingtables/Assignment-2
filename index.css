@@ -10,19 +10,11 @@ body {
     and (device-width : 768px) 
     and (device-height : 1024px)
     { 
-      #title {
-        font-size: 100px;
-      }
-
-      #text {
-        font-size: 40px;
-      }
-
       nav, .dropdown-item {
         font-size: 40px;
       }
 
-    }
+    } 
 
 .card:hover {
   -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
@@ -32,14 +24,6 @@ body {
 
 .margin {
   margin-top: 10%;
-}
-
-#title {
-  font-size: 60px;
-}
-
-.card-text {
-  font-size: 35px;
 }
 
 /* teamstats.html */

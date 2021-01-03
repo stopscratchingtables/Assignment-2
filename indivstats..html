@@ -19,11 +19,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">About Us<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">About Us</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
-            </li>
+                <a class="nav-link" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
+              </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Statistics
@@ -34,7 +34,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <div class="nav-link" onclick="darkMode()" id="darkModebutton" href="#">
+              <div class="nav-link disabled" href="#">
                   <button>Dark Mode</button>
               </div>
             </li>
@@ -46,9 +46,11 @@
         <div class="row">
           <div class="col-xl border medium border-dark shadow-sm">
             <h1 id="title"><u><em>Player Statistics</em></u></h1>
-            <p class="ml-5 my-5" id="text">
-              
-            </p>
+            <p class="ml-5 my-5" id="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                 </p>
           </div>
         </div>
       </div>
@@ -64,7 +66,7 @@
                   </div>
                 </form>
                 <button onclick="calc_stats()" class="btn btn-primary">Submit</button>
-
+                
                 <div>
                   <h4 id="playername">Name: </h4>
                   <h4 id="position">Position: </h4>
@@ -107,20 +109,14 @@
                     </tbody>
                 </table>
 
-                <div id="player_chart" class="margin">
-                  <p>Click on The colored graphed headers if graph does not appear</p>
-                  <canvas id="myChart" height="200" width="400">
-                  </canvas>
+                <div>
+                    <canvas id="player_chart"></canvas>
                 </div>
 
-                <div class="margin">
-                    
-                </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </body>
-
 </html>
