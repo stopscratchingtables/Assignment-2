@@ -1,6 +1,6 @@
 // Dark Mode
 
-const containers = document.querySelector('.container');
+const containers = document.querySelectorAll('.container');
 const navbar = document.querySelector(".navbar");
 const toggle = document.getElementById('darkModebutton');
 
