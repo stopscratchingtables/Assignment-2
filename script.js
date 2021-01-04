@@ -1224,6 +1224,7 @@ function findResults_byol() {
     team_rpg = parseFloat(localStorage.getItem("p1_rpg")) + parseFloat(localStorage.getItem("p2_rpg")) + parseFloat(localStorage.getItem("p3_rpg")) + parseFloat(localStorage.getItem("p4_rpg")) + parseFloat(localStorage.getItem("p5_rpg"));
     console.log(team_ppg, team_apg, team_rpg)
 
+
     // TEAM PPG
     if (team_ppg > 80)
     {
@@ -1249,21 +1250,21 @@ function findResults_byol() {
 
     
     // TEAM APG
-    if (team_apg > 45)
+    if (team_apg > 24)
     {
         var msg = ". You have constructed a very unselfish team, willing to pass for others"
         var grade = "A"
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("plm_grade").innerHTML = grade;
     }
-    else if (team_ppg < 42 && team_ppg > 25)
+    else if (team_apg < 24 && team_apg > 10)
     {
         var msg = ". You have constructed a team that can initate an offensive system properly"
         var grade = "B"
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("plm_grade").innerHTML = grade;
     }
-    else
+    else if (team_apg < 10)
     {
         var msg = ". You have constructed a team that may have chemistry and passing issues"
         var grade = "C"
@@ -1272,21 +1273,21 @@ function findResults_byol() {
     }
 
     // TEAM RPG
-    if (team_rpg > 42)
+    if (team_rpg > 35)
     {
         var msg = ". You have constructed a team that is willing to crash the boards on deffence"
         var grade = "A"
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
-    else if (team_rpg < 42 && team_rpg > 25)
+    else if (team_rpg < 35 && team_rpg > 20)
     {
         var msg = ". You have constructed a team that can adequatley play defence"
         var grade = "B"
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
-    else
+    else if (team_rpg < 25)
     {
         var msg = ". You have constructed a team that may arise some defensive issues"
         var grade = "C"
