@@ -35,7 +35,7 @@ searched. I chose "Lebron James" instead as he is playing this season.
 #### Teamstats.html
 - Add Team's Logo
 
-## Features
+## Features :microscope:
 Now Let me introduce to you my features of the website
  
 ### Existing Features
@@ -66,7 +66,7 @@ Now Let me introduce to you my features of the website
   Note: If player does not have any statistics from a certain year in the graph or displays "NAN", it means they haven't entered the league.
 
 
-## Technologies Used
+## Technologies Used :zap:
 
 - API 
 - JQuery 
@@ -78,11 +78,9 @@ Now Let me introduce to you my features of the website
 - CSS
 - Photos
 
-## Testing
+## Testing :clipboard:
 
-Please check your spelling but if any error is to occur, please contact s10202923@connect.np.edu.sg
-
-## Credits
+## Credits :triangular_flag_on_post:
 
 ### Content
 | APIs        | Link           |
