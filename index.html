@@ -16,22 +16,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">About Us<span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark" href="index.html">About Us<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
+              <a class="nav-link text-dark" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Statistics
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="teamstats.html">Team</a>
-                <a class="dropdown-item" href="#">Individual</a>
+                <a class="dropdown-item text-dark bg-light" href="teamstats.html">Team</a>
+                <a class="dropdown-item text-dark bg-light" href="indivstats..html">Individual</a>
               </div>
             </li>
-            <li class="nav-item">
-              <div class="nav-link" id="darkModebutton" href="#">
+            <li class="nav-item text-dark">
+              <div class="nav-link" onclick="darkModebutton()" href="#">
                 <button>Toggle Dark Mode</button>
               </div>
             </li>
@@ -67,8 +67,8 @@
             <div class="card text-center">
               <img src="media/terminologies/pointgaurd.jpeg" class="card-img-top" alt="">
               <div class="card-body">
-                  <h1 class="card-title">Point Gaurd (PG)</h1>
-                  <p class="card-text">The primary job of a <strong>Point Gaurd</strong> is to orchestrate the offence, ensuring that the team is able to achieve a quality shot during a possesion</p>
+                  <h1 class="card-title text-dark">Point Gaurd (PG)</h1>
+                  <p class="card-text text-dark">The primary job of a <strong>Point Gaurd</strong> is to orchestrate the offence, ensuring that the team is able to achieve a quality shot during a possesion</p>
                   <em>An Example is Luka Doncic (Dallas #77)</em>
               </div>
             </div>
@@ -77,8 +77,8 @@
             <div class="card text-center">
               <img src="media/terminologies/shootinggaurd.jpeg" class="card-img-top" alt="">
               <div class="card-body">
-                <h1 class="card-title">Shooting Gaurd (SG)</h1>
-                <p class="card-text">The primary job of a <strong>Shooting Gaurd</strong> is to play off the ball through the team's sytsem and score, and must be swift and mobile enough to defend opposing gaurds.</p>
+                <h1 class="card-title text-dark">Shooting Gaurd (SG)</h1>
+                <p class="card-text text-dark">The primary job of a <strong>Shooting Gaurd</strong> is to play off the ball through the team's sytsem and score, and must be swift and mobile enough to defend opposing gaurds.</p>
                 <em>An Example is Klay Thompson</em><br>
               </div>
             </div>
@@ -87,8 +87,8 @@
             <div class="card text-center">
               <img src="media/terminologies/smallforward.jpeg" class="card-img-top" alt="">
               <div class="card-body">
-                <h1 class="card-title">Small Forward (SF)</h1>
-                <p class="card-text">The primary job of a <strong>Small Forward</strong> is to defend all positions, score off the ball, and often are secondary or tertiary rebounders</p>
+                <h1 class="card-title text-dark">Small Forward (SF)</h1>
+                <p class="card-text text-dark">The primary job of a <strong>Small Forward</strong> is to defend all positions, score off the ball, and often are secondary or tertiary rebounders</p>
                 <em>An Example is Kevin Durant (Brooklyn #7)</em><br>
               </div>
             </div>
@@ -97,8 +97,8 @@
             <div class="card text-center">
               <img src="media/terminologies/powerforward.jpeg" class="card-img-top" alt="">
               <div class="card-body">
-                <h1 class="card-title">Power Forward (PF)</h1>
-                <p class="card-text">The primary job of a <strong>Power Forward</strong> is to play near the basket while rebounding, defending taller players and stretching the floor to shoot jumpshots</p>
+                <h1 class="card-title text-dark">Power Forward (PF)</h1>
+                <p class="card-text text-dark">The primary job of a <strong>Power Forward</strong> is to play near the basket while rebounding, defending taller players and stretching the floor to shoot jumpshots</p>
                 <em>An Example is Anthony Davis (Lakers #3)</em><br>
               </div>
             </div>
@@ -106,9 +106,9 @@
           <div class="col-md-4">
             <div class="card text-center">
               <img src="media/terminologies/center.jpeg" class="card-img-top" alt="">
-              <div class="card-body">
-                <h1 class="card-title">Center (C)</h1>
-                <p class="card-text">On offense, the <strong>Center</strong> tries to score on close shots and rebound. But on defense, the center tries to block opponents' shots and rebound their misses</p>
+              <div class="card-body text-dark">
+                <h1 class="card-title text-dark">Center (C)</h1>
+                <p class="card-text text-dark">On offense, the <strong>Center</strong> tries to score on close shots and rebound. But on defense, the center tries to block opponents' shots and rebound their misses</p>
                 <em>An Example is Rudy Gobert (Jazz #27)</em>
               </div>
             </div>
@@ -116,14 +116,15 @@
           <div class="col-md-4">
             <div class="card text-center">
               <img src="media/terminologies/other.png" class="card-img-top" alt="">
-              <div class="card-body">
-                <h1 class="card-title">Other Terminologies</h1>
-                <p class="card-text"></p>
+              <div class="card-body text-dark">
+                <h1 class="card-title text-dark">Other Terminologies</h1>
+                <p class="card-text">
+                  <ul class="list-group list-group-flush text-dark">
+                    <li class="list-group-item text-dark"><h3>Points Per Game (PPG)</h3><br>The amount of points a player scores a game</li>
+                    <li class="list-group-item text-dark"><h3>Plus/Minus (+/-)</h3><br>Plus minus measures a player's impact when playing. If they are a net positive, they are benefitial to the team.</li>
+                  </ul>
+                </p>
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h3>Points Per Game (PPG)</h3><br>The amount of points a player scores a game</li>
-                <li class="list-group-item"><h3>Plus/Minus (+/-)</h3><br>Plus minus measures a player's impact when playing. If they are a net positive, they are benefitial to the team.</li>
-              </ul>
             </div>
           </div>
         </div>

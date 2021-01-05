@@ -1,14 +1,106 @@
 // Dark Mode
 
-const container1 = document.querySelectorAll('.container')
-const tg = document.querySelector('#')
+function darkModebutton() {
 
-const changeBackground = e => {
-    container1.classList.toggle("bg-dark");
-    container1.classList.toggle("text-light");
+    //var bg = document.querySelector(".container-fluid");
+    //var bg2 = document.querySelector(".container");
+
+    //bg.classList.toggle("bg-dark");
+    //bg.classList.toggle("text-light");
+
+    //bg2.classList.toggle("bg-dark");
+    //bg2.classList.toggle("text-light");
+
+    // containers
+
+    if ($('.container').hasClass("bg-dark"))
+    {
+        $('.container').removeClass("bg-dark");
+        $('.container').addClass("bg-light");
+        $('.container').removeClass("text-light");
+        $('.container').addClass("text-dark");
+
+    }
+    else if ($('.container').hasClass("bg-light"))
+    {
+        $('.container').removeClass("bg-light");
+        $('.container').addClass("bg-dark");
+        $('.container').removeClass("text-dark");
+        $('.container').addClass("text-light");        
+    }
+
+    // container-fluid
+
+    if ($('.container-fluid').hasClass("bg-dark"))
+    {
+        $('.container-fluid').removeClass("bg-dark");
+        $('.container-fluid').addClass("bg-light");
+        $('.container-fluid').removeClass("text-light");
+        $('.container-fluid').addClass("text-dark");
+    }
+    else if ($('.container-fluid').hasClass("bg-light"))
+    {
+        $('.container-fluid').removeClass("bg-light");
+        $('.container-fluid').addClass("bg-dark");
+        $('.container-fluid').removeClass("text-dark");
+        $('.container-fluid').addClass("text-light");        
+    }
+
+    // navbar
+
+    if ($('.navbar').hasClass("bg-dark"))
+    {
+        $('.navbar').removeClass("bg-dark");
+        $('.navbar').addClass("bg-light");
+    }
+    else if ($('.navbar').hasClass("bg-light"))
+    {
+        $('.navbar').removeClass("bg-light");
+        $('.navbar').addClass("bg-dark");    
+    }
+
+
+    if ($('.nav-link').hasClass("text-dark"))
+    {
+        $('.nav-link').removeClass("text-dark");
+        $('.nav-link').addClass("text-light");
+    }
+    else if ($('.nav-link').hasClass("text-light"))
+    {
+        $('.nav-link').removeClass("text-light");
+        $('.nav-link').addClass("text-dark");    
+    }
+
+
+    if ($('.dropdown-item').hasClass("bg-dark"))
+    {
+        $('.dropdown-item').removeClass("bg-dark");
+        $('.dropdown-item').addClass("bg-light");
+        $('.dropdown-item').removeClass("text-light");
+        $('.dropdown-item').addClass("text-dark");
+    }
+    else if ($('.dropdown-item').hasClass("bg-light"))
+    {
+        $('.dropdown-item').removeClass("bg-light");
+        $('.dropdown-item').addClass("bg-dark");
+        $('.dropdown-item').removeClass("text-dark");
+        $('.dropdown-item').addClass("text-light");        
+    }
+
+    // tables
+
+    if ($('.table').hasClass("text-dark"))
+    {
+        $('.table').removeClass("text-dark");
+        $('.table').addClass("text-light");
+    }
+    else if ($('.table').hasClass("text-light"))
+    {
+        $('.table').removeClass("text-light");
+        $('.table').addClass("text-dark");    
+    }
+
 }
-
-
 
 // =======================================
 // =======================================

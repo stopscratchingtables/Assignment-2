@@ -10,37 +10,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light shadow bg-light">
-        <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">About Us<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="buildyourownlineup.html">Build Your Own Starting 5!<span class="sr-only">(Current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Statistics
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="teamstats.html">Team</a>
-                <a class="dropdown-item" href="indivstats..html">Individual<span class="sr-only">(current)</span></a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div onclick="darkMode()" id="darkModebutton" class="nav-link" href="#">
-                  <button>Dark Mode</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light shadow bg-light">
+    <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="index.html">About Us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="buildyourownlineup.html">Build Your Own Starting 5!<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Statistics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-dark bg-light" href="teamstats.html">Team</a>
+            <a class="dropdown-item text-dark bg-light" href="indivstats..html">Individual</a>
+          </div>
+        </li>
+        <li class="nav-item text-dark">
+          <div class="nav-link" onclick="darkModebutton()" href="#">
+            <button>Toggle Dark Mode</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
           <div class="container-fluid pt-5 border medium border-dark shadow bg-light">
             <h1 id="title"><u><em>Build Your Own Starting 5!</em></u></h1>
@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-xl border medium border-dark">
               
-              <table class="table build_lineup">
+              <table class="table build_lineup text-dark">
                 <thead>
                   <tr>
                       <th>Player Name</th>
@@ -145,8 +145,8 @@
                   <div class="card text-center">
                     <img src="media/terminologies/pointgaurd.jpeg" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h2 class="card-title">Stregnths</h2>
-                        <p class="card-text" id="strengths_byol"></p>
+                        <h2 class="card-title text-dark">Stregnths</h2>
+                        <p class="card-text text-dark" id="strengths_byol"></p>
                     </div>
                   </div>
                 </div>
@@ -154,8 +154,8 @@
                   <div class="card text-center">
                     <img src="media/terminologies/shootinggaurd.jpeg" class="card-img-top" alt="">
                     <div class="card-body">
-                      <h2 class="card-title">Weaknesses</h2>
-                      <p class="card-text" id="weakness_byol"></p>
+                      <h2 class="card-title text-dark">Weaknesses</h2>
+                      <p class="card-text text-dark" id="weakness_byol"></p>
                     </div>
                   </div>
                 </div>
@@ -163,11 +163,11 @@
                   <div class="card text-center">
                     <img src="media/terminologies/smallforward.jpeg" class="card-img-top" alt="">
                     <div class="card-body">
-                      <h2 class="card-title">Gradings</h2>
+                      <h2 class="card-title text-dark">Gradings</h2>
                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><p>Offence: <span id="off_grade">-</span></p></li>
-                        <li class="list-group-item"><p>Defence: <span id="def_grade">-</span></p></li>
-                        <li class="list-group-item"><p>Playmaking: <span id="plm_grade">-</span></p></li>
+                        <li class="list-group-item text-dark"><p>Offence: <span id="off_grade">-</span></p></li>
+                        <li class="list-group-item text-dark"><p>Defence: <span id="def_grade">-</span></p></li>
+                        <li class="list-group-item text-dark"><p>Playmaking: <span id="plm_grade">-</span></p></li>
                       </ul>
               </div>
       

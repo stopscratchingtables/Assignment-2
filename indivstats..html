@@ -10,37 +10,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light shadow bg-light">
-        <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">About Us</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Statistics
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="teamstats.html">Team</a>
-                <a class="dropdown-item" href="indivstats..html">Individual<span class="sr-only">(current)</span></a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div class="nav-link disabled" href="#">
-                  <button>Dark Mode</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light shadow bg-light">
+    <a class="navbar-brand" href="index.html"><img src="media/2065365-200.png" alt="" height="50px" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="index.html">About Us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="buildyourownlineup.html">Build Your Own Starting 5!</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Statistics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-dark bg-light" href="teamstats.html">Team<span class="sr-only">(current)</span></a>
+            <a class="dropdown-item text-dark bg-light" href="indivstats..html">Individual</a>
+          </div>
+        </li>
+        <li class="nav-item text-dark">
+          <div class="nav-link" onclick="darkModebutton()" href="#">
+            <button>Toggle Dark Mode</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
           <div class="container-fluid pt-5 border medium border-dark shadow bg-light">
             <h1 id="title"><u><em>Player Statistics</em></u></h1>
@@ -72,7 +72,7 @@
                   <h4 id="t">Team: </h4>
                 </div>
 
-                <table class="table">
+                <table class="table text-dark">
                     <thead>
                       <tr>
                         <th scope="col">Season</th>
