@@ -1,18 +1,14 @@
 // Dark Mode
 
-const containers = document.querySelectorAll('.container');
-const navbar = document.querySelector(".navbar");
-const toggle = document.getElementById('darkModebutton');
+const container1 = document.querySelectorAll('.container')
+const tg = document.querySelector('#')
 
-const changeBackground = (e) => {
-    containers.classList.toggle("bg-dark");
-    containers.classList.toggle("text-light");
-
-    navbar.classList.toggle("bg-dark");
-    navbar.classList.toggle("text-light");
+const changeBackground = e => {
+    container1.classList.toggle("bg-dark");
+    container1.classList.toggle("text-light");
 }
 
-toggle.addEventListener('click', changeBackground);
+
 
 // =======================================
 // =======================================
