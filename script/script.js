@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint funcscope:true*/
 // Dark Mode
 
 function darkModebutton() {
@@ -113,23 +115,23 @@ function darkModebutton() {
 function calc_stats() {
     // Finding the Player's ID
     var pname = document.getElementById('inputplayername').value;
-    const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
-    const a = fetch(url)
+    var url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
+    var a = fetch(url);
 
     a.then(response => {
-        return response.json()
+        return response.json();
     })
     .then(data => {
-        let x = data.data
-        console.log(x)
+        var x = data.data;
+        console.log(x);
         for (let i=0; i<x.length; i++)
         {
 
             var p_id = x[i].id;
             var p_name = x[i].first_name + " " +  x[i].last_name;
             var p_pos = x[i].position;
-            var p_height = `${x[i].height_feet}` + " feet " +  `${x[i].height_inches}` + " inches"
-            var p_team = x[i]['team']['full_name'];
+            var p_height = x[i].height_feet + " feet " +  x[i].height_inches + " inches";
+            var p_team = x[i].team.full_name;
 
         }
 
@@ -151,11 +153,11 @@ function calc_stats() {
 
 function get_playerStats(p_id) {
     $("#szn_stats tr").remove();
-    var url_list = []
-    var ppg_list = []
-    var rpg_list = []
-    var apg_list = []
-    var pm_list = []
+    var url_list = [];
+    var ppg_list = [];
+    var rpg_list = [];
+    var apg_list = [];
+    var pm_list = [];
     const url_20 = "https://www.balldontlie.io/api/v1/season_averages?season=2020&player_ids[]=" + p_id;
     const url_19 = "https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=" + p_id;
     const url_18 = "https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=" + p_id;
@@ -193,7 +195,7 @@ function get_playerStats(p_id) {
             }
 
             ppg_list.push(ppg);
-            apg_list.push(apg)
+            apg_list.push(apg);
             rpg_list.push(rpg);
             pm_list.push(pm/82 * 10);
 
@@ -203,7 +205,7 @@ function get_playerStats(p_id) {
                                                                     <td>${rpg.toFixed(2)}</td>
                                                                     <td>${apg.toFixed(2)}</td>
                                                                     <td>${pm.toFixed(2)}</td>
-                                                                </tr>`
+                                                                </tr>`;
                                                                 
         })
         .catch(err => {
@@ -211,7 +213,7 @@ function get_playerStats(p_id) {
         });
     }
     buildChart(ppg_list, rpg_list, apg_list, pm_list);
-    playerDesc(ppg_list, rpg_list, apg_list, pm_list)
+    playerDesc(ppg_list, rpg_list, apg_list, pm_list);
 }
 
 
@@ -267,16 +269,16 @@ function buildChart (ppg_list, rpg_list, apg_list, pm_list) {
 // =======================================
 
 function displayLakers() {
-    const url = "https://www.balldontlie.io/api/v1/teams/14"
-    const lakers = fetch(url)
+    const url = "https://www.balldontlie.io/api/v1/teams/14";
+    const lakers = fetch(url);
 
     lakers.then(response => {
-        return response.json()
+        return response.json();
     })
     .then(data => {
-        console.log(data)
-    })
-    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/lakers.png" alt="" height="225px" width="350px">'
+        console.log(data);
+    });
+    document.getElementById('team_logo').innerHTML = '<img src="media/teamlogos/lakers.png" alt="" height="225px" width="350px">';
     document.getElementById('t_name').innerHTML = 'Los Angeles Lakers';
     /* 
     const response = await fetch(url)
@@ -284,16 +286,16 @@ function displayLakers() {
     console.log(data) */ 
 
     const url2 = "https://www.balldontlie.io/api/v1/games/?seasons[]=2019&team_ids[]=14"
-    const lakers_score = fetch(url2)
+    const lakers_score = fetch(url2);
     lakers_score.then(response => {
-        return response.json()
+        return response.json();
     })
     .then(data => {
-        console.log(data)
+        console.log(data);
 
-        let data_list = data.data
+        var data_list = data.data;
         // PPG
-        let total_hts = 0
+        let total_hts = 0;
         for (let i=0; i < data_list.length; i++)
         {
             total_hts += data_list[i].home_team_score;
@@ -303,7 +305,7 @@ function displayLakers() {
         document.getElementById("ppg_score").innerHTML = total_hts;
 
         // DRG
-        let drg = 0
+        let drg = 0;
         for (let i=0; i < data_list.length; i++)
         {
             drg += data_list[i].visitor_team_score;
@@ -313,7 +315,7 @@ function displayLakers() {
         document.getElementById("def_score").innerHTML = drg;
         
         // ORG
-        let org = 0
+        let org = 0;
         org += total_hts * 0.9;
         document.getElementById("off_score").innerHTML = org;
     })
