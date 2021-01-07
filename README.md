@@ -1,9 +1,9 @@
 # Assignment 2- Basketball Statistical Search Website :basketball: :running:
 
-Name: Hugo Von Louwen Dorosan
-Class: IT01
-ID: 10202923
-Website URL:
+Name: Hugo Von Louwen Dorosan <br />
+Class: IT01 <br />
+ID: 10202923 <br />
+Website URL: https://stopscratchingtables.github.io/Assignment-2/ <br />
 
 As a basketball fan, I always find myself immersing into the statisitics and analytics of sports data. Creating charts to see a player or team's shooting percentage, calculating a team's statistics to get desired and getting into the nerdy aspects of basketball analytics is something I love to do during my free time! 
 Furthermore, I know I'm not the only one... There are many basketball nerds out there who love to get into the fine and smaller details of the game by creating their own fantasy balanced lineups that would dominate the league!
@@ -15,6 +15,14 @@ During the design process, I thought of what layouts, colours and media that wou
 Afterwards, I though about the functionalities of the website and what a basketball fan would want from a website that is trying to attract their attention. Hence, I have added the following features (refer to the features section). 
 
 Once I was very sure of the functionalities, layouts, colours and media of the website, I began sketching it by creating a wireframe for my website on Adobe Xd. I kept in mind of the designs for both on PC and mobile. This was to make sure most devices would be compatible with this website. Hence, I used bootstrap as it already has pre-done media-queries that will make my website mobile friendly. However, I thought about more intruging ideas and changes I should make to my website to ensure it can reach it's potential in entisng my target audience.
+
+### Check-List
+
+[checkbox:unchecked] Validate Code <br />
+[checkbox:unchecked] Check Spelling Errors <br />
+[checkbox:unchecked] Code Checked for Plagarism <br />
+[checkbox:unchecked] ID and Class Names are effecient in understanding code <br />
+[checkbox:unchecked] Multi-Device Friendly <br />
 
 ### Changes to WireFrame
 
@@ -52,7 +60,7 @@ Now Let me introduce to you my features of the website
    2) Press Submit
    3) Repeat Steps 1 and 2 together 4 more times
    4) Calculate the total statistics of the team by clicking on the results button
-   5) Look at the gradings to see how well-built your lineup is!
+   5) Look at the gradings to see how well-built your lineup is
    
 - Team Statistics
    Select your favourite team by hovering(tapping on phone) over "Team Name"<br><br>
@@ -79,6 +87,14 @@ Now Let me introduce to you my features of the website
 - Photos
 
 ## Testing :clipboard:
+
+The following validators have been used to check my codes for plagarism, spelling, HTML code consistency, CSS code consistency and Javascript code consistency:
+
+- https://validator.w3.org/
+- https://jigsaw.w3.org/css-validator/
+- http://beautifytools.com/javascript-validator.php
+- https://gist.github.com/d2s/927d539268ee219c7ad04da6f5bc813b
+- https://copyleaks.com/code-plagiarism-checker
 
 ## Credits :triangular_flag_on_post:
 
