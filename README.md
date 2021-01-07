@@ -109,7 +109,7 @@ The following validators have been used to check my codes for plagarism, spellin
 | ------------- |:-------------:|
 | Background Photo     | www.unsplash.com |
 | Icons      | www.thenounproject.com |
-| NBA Logo      | www.nba.com |
+| NBA and Team Logos      | www.nba.com |
 | Luka Doncic picture      | https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1blBC8SPxtWf5-YIlgOdbzCmsULVtfvFovA&usqp=CAU |
 | Klay Thompson picture    | https://theathletic.com/2221644/2020/11/25/klay-thompson-warriors-achilles-recovery/ |
 | Kevin Durant picture    | https://www.sportsnet.ca/nba/article/report-kevin-durant-expected-require-7-day-quarantine-return/ |
