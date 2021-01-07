@@ -343,17 +343,25 @@ function displayBucks() {
 function displayHawks() {
     var team_id = "1";
     var team_id2 = "1";
-    var img = '<img src="media/teamlogos/bucks.png" alt="" height="225px" width="325px">';
-    var team_name = 'Milwaulke Bucks';
+    var img = '<img src="media/teamlogos/hawks.png" alt="" height="225px" width="325px">';
+    var team_name = 'Atlanta Hawks';
     displayTeam(team_id, team_name, team_id2, img);
 }
 
 function displaySpurs() {
-
+    var team_id = "28";
+    var team_id2 = "31";
+    var img = '<img src="media/teamlogos/spurs.png" alt="" height="225px" width="325px">';
+    var team_name = 'San Antonio Spurs';
+    displayTeam(team_id, team_name, team_id2, img);
 }
 
 function displayJazz() {
-    
+    var team_id = "29";
+    var team_id2 = "40";
+    var img = '<img src="media/teamlogos/jazz.png" alt="" height="225px" width="325px">';
+    var team_name = 'Utah Jazz';
+    displayTeam(team_id, team_name, team_id2, img);
 }
 
 function displayTeam(tID, tNAME, tID2, img) {
