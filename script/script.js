@@ -183,12 +183,12 @@ function darkModebutton() {
             $('.nav-link').removeClass("text-light");
             $('.nav-link').addClass("text-dark");
         }
-        if ($('.dropdown-item').hasClass("bg-light"))
+        if ($('.dropdown-item').hasClass("bg-dark"))
         {
-            $('.dropdown-item').removeClass("bg-light");
-            $('.dropdown-item').addClass("bg-dark");
-            $('.dropdown-item').removeClass("text-dark");
-            $('.dropdown-item').addClass("text-light");        
+            $('.dropdown-item').removeClass("bg-dark");
+            $('.dropdown-item').addClass("bg-light");
+            $('.dropdown-item').removeClass("text-light");
+            $('.dropdown-item').addClass("text-dark");        
         }
         if ($('.table').hasClass("text-lught"))
         {
