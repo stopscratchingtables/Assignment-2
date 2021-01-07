@@ -2,6 +2,7 @@
 /*jshint funcscope:true*/
 // Dark Mode
 
+/*
 function darkModebutton() {
 
     //var bg = document.querySelector(".container-fluid");
@@ -102,7 +103,231 @@ function darkModebutton() {
         $('.table').addClass("text-dark");    
     }
 
+if ($('.container').hasClass("bg-light"))
+{
+    localStorage.setItem("darkLightToggle", "darkMode");
 }
+else if ($('.container').hasClass("bg-dark"))
+{
+    localStorage.setItem()
+}
+
+} */
+
+if (localStorage.getItem('darkLightToggle' == null) || localStorage.getItem('darkLightToggle') == "lightMode")
+{
+    localStorage.setItem('darkLightToggle', "lightMode")
+}
+else if (localStorage.getItem('darkLightToggle') == "darkMode")
+{
+    $('.container').removeClass("bg-light");
+    $('.container').addClass("bg-dark");
+    $('.container').removeClass("text-dark");
+    $('.container').addClass("text-light");      
+
+    $('.container-fluid').removeClass("bg-light");
+    $('.container-fluid').addClass("bg-dark");
+    $('.container-fluid').removeClass("text-dark");
+    $('.container-fluid').addClass("text-light");        
+
+    $('.navbar').removeClass("bg-light");
+    $('.navbar').addClass("bg-dark");    
+
+    $('.nav-link').removeClass("text-dark");
+    $('.nav-link').addClass("text-light");
+
+    $('.dropdown-item').removeClass("bg-light");
+    $('.dropdown-item').addClass("bg-dark");
+    $('.dropdown-item').removeClass("text-dark");
+    $('.dropdown-item').addClass("text-light");        
+
+    $('.table').removeClass("text-dark");
+    $('.table').addClass("text-light"); 
+}
+
+
+function darkModebutton() {
+    darkMode = localStorage.getItem("darkLightToggle")
+    if (localStorage.getItem("darkLightToggle") == "darkMode")
+    {
+        localStorage.setItem('darkLightToggle', 'lightMode')
+
+        if ($('.container').hasClass("bg-dark"))
+        {
+            $('.container').removeClass("bg-dark");
+            $('.container').addClass("bg-light");
+            $('.container').removeClass("text-light");
+            $('.container').addClass("text-dark");
+        }
+        if ($('.container-fluid').hasClass("bg-dark"))
+        {
+            $('.container-fluid').removeClass("bg-dark");
+            $('.container-fluid').addClass("bg-light");
+            $('.container-fluid').removeClass("text-light");
+            $('.container-fluid').addClass("text-dark");
+        }
+        if ($('.container-fluid').hasClass("bg-dark"))
+        {
+            $('.container-fluid').removeClass("bg-dark");
+            $('.container-fluid').addClass("bg-light");
+            $('.container-fluid').removeClass("text-light");
+            $('.container-fluid').addClass("text-dark");
+        }
+        if ($('.navbar').hasClass("bg-dark"))
+        {
+            $('.navbar').removeClass("bg-dark");
+            $('.navbar').addClass("bg-light");
+        }
+        if ($('.nav-link').hasClass("text-light"))
+        {
+            $('.nav-link').removeClass("text-light");
+            $('.nav-link').addClass("text-dark");
+        }
+        if ($('.dropdown-item').hasClass("bg-light"))
+        {
+            $('.dropdown-item').removeClass("bg-light");
+            $('.dropdown-item').addClass("bg-dark");
+            $('.dropdown-item').removeClass("text-dark");
+            $('.dropdown-item').addClass("text-light");        
+        }
+        if ($('.table').hasClass("text-lught"))
+        {
+            $('.table').removeClass("text-dark");
+            $('.table').addClass("text-light");
+        }
+    }
+    else
+    {
+        localStorage.setItem('darkLightToggle', 'darkMode')
+        if ($('.container').hasClass("bg-light"))
+        {
+            $('.container').removeClass("bg-light");
+            $('.container').addClass("bg-dark");
+            $('.container').removeClass("text-dark");
+            $('.container').addClass("text-light");        
+        }
+        if ($('.container-fluid').hasClass("bg-light"))
+        {
+            $('.container-fluid').removeClass("bg-light");
+            $('.container-fluid').addClass("bg-dark");
+            $('.container-fluid').removeClass("text-dark");
+            $('.container-fluid').addClass("text-light");        
+        }
+        if ($('.navbar').hasClass("bg-light"))
+        {
+            $('.navbar').removeClass("bg-light");
+            $('.navbar').addClass("bg-dark");    
+        }
+        if ($('.nav-link').hasClass("text-dark"))
+        {
+            $('.nav-link').removeClass("text-dark");
+            $('.nav-link').addClass("text-light");
+        }
+        if ($('.dropdown-item').hasClass("bg-light"))
+        {
+            $('.dropdown-item').removeClass("bg-light");
+            $('.dropdown-item').addClass("bg-dark");
+            $('.dropdown-item').removeClass("text-dark");
+            $('.dropdown-item').addClass("text-light");        
+        }
+        if ($('.table').hasClass("text-dark"))
+        {
+            $('.table').removeClass("text-dark");
+            $('.table').addClass("text-light"); 
+    }
+}
+}
+
+// light mode stuff
+function lightMode() {
+    if ($('.container').hasClass("bg-dark"))
+    {
+        $('.container').removeClass("bg-dark");
+        $('.container').addClass("bg-light");
+        $('.container').removeClass("text-light");
+        $('.container').addClass("text-dark");
+    }
+    if ($('.container-fluid').hasClass("bg-dark"))
+    {
+        $('.container-fluid').removeClass("bg-dark");
+        $('.container-fluid').addClass("bg-light");
+        $('.container-fluid').removeClass("text-light");
+        $('.container-fluid').addClass("text-dark");
+    }
+    if ($('.container-fluid').hasClass("bg-dark"))
+    {
+        $('.container-fluid').removeClass("bg-dark");
+        $('.container-fluid').addClass("bg-light");
+        $('.container-fluid').removeClass("text-light");
+        $('.container-fluid').addClass("text-dark");
+    }
+    if ($('.navbar').hasClass("bg-dark"))
+    {
+        $('.navbar').removeClass("bg-dark");
+        $('.navbar').addClass("bg-light");
+    }
+    if ($('.nav-link').hasClass("text-dark"))
+    {
+        $('.nav-link').removeClass("text-light");
+        $('.nav-link').addClass("text-dark");
+    }
+    if ($('.dropdown-item').hasClass("bg-light"))
+    {
+        $('.dropdown-item').removeClass("bg-light");
+        $('.dropdown-item').addClass("bg-dark");
+        $('.dropdown-item').removeClass("text-dark");
+        $('.dropdown-item').addClass("text-light");        
+    }
+    if ($('.table').hasClass("text-lught"))
+    {
+        $('.table').removeClass("text-dark");
+        $('.table').addClass("text-light");
+    }
+}
+
+// dark mode stuff
+function darkMode() {
+    if ($('.container').hasClass("bg-light"))
+    {
+        $('.container').removeClass("bg-light");
+        $('.container').addClass("bg-dark");
+        $('.container').removeClass("text-dark");
+        $('.container').addClass("text-light");        
+    }
+    if ($('.container-fluid').hasClass("bg-light"))
+    {
+        $('.container-fluid').removeClass("bg-light");
+        $('.container-fluid').addClass("bg-dark");
+        $('.container-fluid').removeClass("text-dark");
+        $('.container-fluid').addClass("text-light");        
+    }
+    if ($('.navbar').hasClass("bg-light"))
+    {
+        $('.navbar').removeClass("bg-light");
+        $('.navbar').addClass("bg-dark");    
+    }
+    if ($('.nav-link').hasClass("text-dark"))
+    {
+        $('.nav-link').removeClass("text-dark");
+        $('.nav-link').addClass("text-light");
+    }
+    if ($('.dropdown-item').hasClass("bg-light"))
+    {
+        $('.dropdown-item').removeClass("bg-light");
+        $('.dropdown-item').addClass("bg-dark");
+        $('.dropdown-item').removeClass("text-dark");
+        $('.dropdown-item').addClass("text-light");        
+    }
+    if ($('.table').hasClass("text-dark"))
+    {
+        $('.table').removeClass("text-dark");
+        $('.table').addClass("text-light");    
+    }
+}
+
+
+
+
 
 // =======================================
 // =======================================
@@ -811,5 +1036,4 @@ function findResults_byol() {
         document.getElementById("weakness_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
-    
-}
+}   
