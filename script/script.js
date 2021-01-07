@@ -1,118 +1,14 @@
 /*jshint esversion: 6 */
 /*jshint funcscope:true*/
-// Dark Mode
-
-/*
-function darkModebutton() {
-
-    //var bg = document.querySelector(".container-fluid");
-    //var bg2 = document.querySelector(".container");
-
-    //bg.classList.toggle("bg-dark");
-    //bg.classList.toggle("text-light");
-
-    //bg2.classList.toggle("bg-dark");
-    //bg2.classList.toggle("text-light");
-
-    // containers
-
-    if ($('.container').hasClass("bg-dark"))
-    {
-        $('.container').removeClass("bg-dark");
-        $('.container').addClass("bg-light");
-        $('.container').removeClass("text-light");
-        $('.container').addClass("text-dark");
-
-    }
-    else if ($('.container').hasClass("bg-light"))
-    {
-        $('.container').removeClass("bg-light");
-        $('.container').addClass("bg-dark");
-        $('.container').removeClass("text-dark");
-        $('.container').addClass("text-light");        
-    }
-
-    // container-fluid
-
-    if ($('.container-fluid').hasClass("bg-dark"))
-    {
-        $('.container-fluid').removeClass("bg-dark");
-        $('.container-fluid').addClass("bg-light");
-        $('.container-fluid').removeClass("text-light");
-        $('.container-fluid').addClass("text-dark");
-    }
-    else if ($('.container-fluid').hasClass("bg-light"))
-    {
-        $('.container-fluid').removeClass("bg-light");
-        $('.container-fluid').addClass("bg-dark");
-        $('.container-fluid').removeClass("text-dark");
-        $('.container-fluid').addClass("text-light");        
-    }
-
-    // navbar
-
-    if ($('.navbar').hasClass("bg-dark"))
-    {
-        $('.navbar').removeClass("bg-dark");
-        $('.navbar').addClass("bg-light");
-    }
-    else if ($('.navbar').hasClass("bg-light"))
-    {
-        $('.navbar').removeClass("bg-light");
-        $('.navbar').addClass("bg-dark");    
-    }
 
 
-    if ($('.nav-link').hasClass("text-dark"))
-    {
-        $('.nav-link').removeClass("text-dark");
-        $('.nav-link').addClass("text-light");
-    }
-    else if ($('.nav-link').hasClass("text-light"))
-    {
-        $('.nav-link').removeClass("text-light");
-        $('.nav-link').addClass("text-dark");    
-    }
-
-
-    if ($('.dropdown-item').hasClass("bg-dark"))
-    {
-        $('.dropdown-item').removeClass("bg-dark");
-        $('.dropdown-item').addClass("bg-light");
-        $('.dropdown-item').removeClass("text-light");
-        $('.dropdown-item').addClass("text-dark");
-    }
-    else if ($('.dropdown-item').hasClass("bg-light"))
-    {
-        $('.dropdown-item').removeClass("bg-light");
-        $('.dropdown-item').addClass("bg-dark");
-        $('.dropdown-item').removeClass("text-dark");
-        $('.dropdown-item').addClass("text-light");        
-    }
-
-    // tables
-
-    if ($('.table').hasClass("text-dark"))
-    {
-        $('.table').removeClass("text-dark");
-        $('.table').addClass("text-light");
-    }
-    else if ($('.table').hasClass("text-light"))
-    {
-        $('.table').removeClass("text-light");
-        $('.table').addClass("text-dark");    
-    }
-
-if ($('.container').hasClass("bg-light"))
-{
-    localStorage.setItem("darkLightToggle", "darkMode");
-}
-else if ($('.container').hasClass("bg-dark"))
-{
-    localStorage.setItem()
-}
-
-} */
+// =======================================
+// =======================================
+// =======================================
+// Toggle Dark/Light Mode
+// =======================================
+// =======================================
+// =======================================
 
 if (localStorage.getItem('darkLightToggle' == null) || localStorage.getItem('darkLightToggle') == "lightMode")
 {
@@ -190,10 +86,10 @@ function darkModebutton() {
             $('.dropdown-item').removeClass("text-light");
             $('.dropdown-item').addClass("text-dark");        
         }
-        if ($('.table').hasClass("text-lught"))
+        if ($('.table').hasClass("text-light"))
         {
-            $('.table').removeClass("text-dark");
-            $('.table').addClass("text-light");
+            $('.table').removeClass("text-light");
+            $('.table').addClass("text-dark");
         }
     }
     else
@@ -326,9 +222,6 @@ function darkMode() {
 }
 
 
-
-
-
 // =======================================
 // =======================================
 // =======================================
@@ -336,7 +229,6 @@ function darkMode() {
 // =======================================
 // =======================================
 // =======================================
-
 function calc_stats() {
     // Finding the Player's ID
     var pname = document.getElementById('inputplayername').value;
@@ -366,9 +258,6 @@ function calc_stats() {
         document.getElementById('t').innerHTML = "Team: " + p_team;
 
         get_playerStats(p_id);
-
-
-
     })
     .catch(err => {
         console.error(err);
@@ -411,11 +300,8 @@ function get_playerStats(p_id) {
                 var rpg = x[i].reb;
                 var apg = x[i].ast;
 
-
-
                 // Plus minus formula = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
                 var pm = (ppg + rpg + apg + x[i].stl + x[i].blk - (x[i].fga - x[i].fgm) - (x[i].fta - x[i].ftm) - x[i].turnover) ;
-
 
             }
 
@@ -431,7 +317,6 @@ function get_playerStats(p_id) {
                                                                     <td>${apg.toFixed(2)}</td>
                                                                     <td>${pm.toFixed(2)}</td>
                                                                 </tr>`;
-                                                                
         })
         .catch(err => {
             console.error(err);
@@ -767,7 +652,6 @@ function buildTable(a, b){
         });
 }
 
-
 // =======================================
 // =======================================
 // =======================================
@@ -821,8 +705,6 @@ function playerfive_byol() {
 
 }
 
-
-
 function displayStats_byol(pname, type) {
 
     const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
@@ -835,7 +717,6 @@ function displayStats_byol(pname, type) {
         let x = data.data
         console.log(x)
 
-        
         for (let i=0; i<x.length; i++)
         {
 
@@ -873,7 +754,6 @@ function displayStats_byol(pname, type) {
             <p>${p_height}</p>
             <p>${p_team}</p>
             `
-
             document.getElementById("player1_ppg").innerHTML = ppg;
             document.getElementById("player1_rpg").innerHTML = rpg;
             document.getElementById("player1_apg").innerHTML = apg;
@@ -882,7 +762,6 @@ function displayStats_byol(pname, type) {
             localStorage.setItem("p1_rpg", rpg);
             localStorage.setItem("p1_apg", apg);
         }
-
         if (type == "two")
         {
             document.getElementById("p_name_build_two").innerHTML = `
