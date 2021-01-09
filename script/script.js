@@ -845,6 +845,12 @@ function findResults_byol() {
     team_rpg = parseFloat(localStorage.getItem("p1_rpg")) + parseFloat(localStorage.getItem("p2_rpg")) + parseFloat(localStorage.getItem("p3_rpg")) + parseFloat(localStorage.getItem("p4_rpg")) + parseFloat(localStorage.getItem("p5_rpg"));
     console.log(team_ppg, team_apg, team_rpg)
 
+    document.getElementById("strengths_byol").innerHTML = "";
+    document.getElementById("weakness_byol").innerHTML = "";
+    document.getElementById("off_grade").innerHTML = "";
+    document.getElementById("plm_grade").innerHTML = "";
+    document.getElementById("def_grade").innerHTML = "";
+
     // TEAM PPG
     if (team_ppg > 80)
     {
