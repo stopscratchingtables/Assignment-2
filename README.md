@@ -19,11 +19,11 @@ Once I was very sure of the functionalities, layouts, colours and media of the w
 
 ### Check-List
 
-[checkbox:unchecked] Validate Code <br />
-[checkbox:unchecked] Check Spelling Errors <br />
-[checkbox:unchecked] Code Checked for Plagarism <br />
-[checkbox:unchecked] ID and Class Names are effecient in understanding code <br />
-[checkbox:unchecked] Multi-Device Friendly <br />
+- [x] Validate Code <br />
+- [x] Check Spelling Errors <br />
+- [x] Code Checked for Plagarism <br />
+- [x] ID and Class Names are effecient in understanding code <br />
+- [x] Multi-Device Friendly <br />
 
 ### Changes to WireFrame
 
@@ -85,7 +85,8 @@ Now Let me introduce to you my features of the website
 - Bootstrap
 - HTML 
 - CSS
-- Photos
+- Photos (.png and .jpeg)
+- Adobe Xd
 
 ## Testing :clipboard:
 
@@ -121,6 +122,8 @@ The following validators have been used to check my codes for plagarism, spellin
 ### Tutorials and Guides
 | Name        | Link           |
 | ------------- |:-------------:|
+| w3schools     | www.w3schools.com |
+| stackoverflow     | https://stackoverflow.com/questions/37916763/remove-of-string-from-dom-element-id |
 | w3schools     | www.w3schools.com |
 | Icons      | www.thenounproject.com |
 | Tutorials Watched (Playlist)      | https://www.youtube.com/playlist?list=PLYHL00c8NrmwPhUZMBdykG-xX3oaSJQD3 |
