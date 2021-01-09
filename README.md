@@ -126,19 +126,18 @@ The following validators have been used to check my codes for plagarism, spellin
 | Anthony Davis picture    | https://www.gq.com/story/anthony-davis-is-leveling-up |
 | Rudy Gobert picture    | https://hoopshype.com/2015/10/31/rudy-gobert-is-basically-blocking-everything/ |
 | Basketball Terminologies    | https://www.britannica.com/sports/basketball |
+| Icons      | www.thenounproject.com |
 
 ### Tutorials and Guides
 | Name        | Link           |
 | ------------- |:-------------:|
 | w3schools     | www.w3schools.com |
 | stackoverflow     | https://stackoverflow.com/questions/37916763/remove-of-string-from-dom-element-id |
-| w3schools     | www.w3schools.com |
-| Icons      | www.thenounproject.com |
 | Tutorials Watched (Playlist)      | https://www.youtube.com/playlist?list=PLYHL00c8NrmwPhUZMBdykG-xX3oaSJQD3 |
 
 ### Acknowledgements
 Inspiration Websites:
 - www.tradenba.com
-- espn.com.sg/nba
+- www.espn.com.sg/nba
 - www.spotrac.com
 
