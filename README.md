@@ -134,6 +134,7 @@ The following validators have been used to check my codes for plagarism, spellin
 | w3schools     | www.w3schools.com |
 | stackoverflow     | https://stackoverflow.com/questions/37916763/remove-of-string-from-dom-element-id |
 | Tutorials Watched (Playlist)      | https://www.youtube.com/playlist?list=PLYHL00c8NrmwPhUZMBdykG-xX3oaSJQD3 |
+| Media Query for Devices| https://stackoverflow.com/questions/46313640/iphone-x-8-8-plus-css-media-queries |
 
 ### Acknowledgements
 Inspiration Websites:
