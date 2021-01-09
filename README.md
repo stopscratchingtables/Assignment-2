@@ -4,6 +4,7 @@ Name: Hugo Von Louwen Dorosan <br />
 Class: IT01 <br />
 ID: 10202923 <br />
 Website URL: https://stopscratchingtables.github.io/Assignment-2/ <br />
+Website Demo Video: https://youtu.be/pzk6BgKx6uw
 
 As a basketball fan, I always find myself immersing into the statisitics and analytics of sports data. Creating charts to see a player or team's shooting percentage, calculating a team's statistics to get desired and getting into the nerdy aspects of basketball analytics is something I love to do during my free time! 
 Furthermore, I know I'm not the only one... There are many basketball nerds out there who love to get into the fine and smaller details of the game by creating their own fantasy balanced lineups that would dominate the league!
