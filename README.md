@@ -75,11 +75,12 @@ Now Let me introduce to you my features of the website
   Note: If player does not have any statistics from a certain year in the graph or displays "NAN", it means they haven't entered the league.
 
 ### Future features to be implemented
-- Team Statistics
+- Team Statistics <br />
   Include team rankings of teams
   Allow the ability to compare statistics betweem two or more teams
+  Include data for more teams
 
-- Individual Statistics
+- Players Statistics <br />
   Allow the ability to compare statistics between two or more players
 
 ## Technologies Used :zap:
