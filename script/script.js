@@ -11,11 +11,11 @@
 // =======================================
 // =======================================
 
-if (localStorage.getItem('darkLightToggle' === null) || localStorage.getItem('darkLightToggle') == "lightMode")
+if (localStorage.getItem('darkLightToggle' == null) || localStorage.getItem('darkLightToggle') == "lightMode")
 {
     localStorage.setItem('darkLightToggle', "lightMode");
 }
-else if (localStorage.getItem('darkLightToggle') == "darkMode");
+else if (localStorage.getItem('darkLightToggle') == "darkMode")
 {
     $('.container').removeClass("bg-light");
     $('.container').addClass("bg-dark");
