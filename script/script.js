@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint funcscope:true*/
+/*jshint loopfunc:true */
 
 
 // =======================================
@@ -10,11 +11,11 @@
 // =======================================
 // =======================================
 
-if (localStorage.getItem('darkLightToggle' == null) || localStorage.getItem('darkLightToggle') == "lightMode")
+if (localStorage.getItem('darkLightToggle' === null) || localStorage.getItem('darkLightToggle') == "lightMode")
 {
-    localStorage.setItem('darkLightToggle', "lightMode")
+    localStorage.setItem('darkLightToggle', "lightMode");
 }
-else if (localStorage.getItem('darkLightToggle') == "darkMode")
+else if (localStorage.getItem('darkLightToggle') == "darkMode");
 {
     $('.container').removeClass("bg-light");
     $('.container').addClass("bg-dark");
@@ -43,10 +44,10 @@ else if (localStorage.getItem('darkLightToggle') == "darkMode")
 
 
 function darkModebutton() {
-    darkMode = localStorage.getItem("darkLightToggle")
+    darkMode = localStorage.getItem("darkLightToggle");
     if (localStorage.getItem("darkLightToggle") == "darkMode")
     {
-        localStorage.setItem('darkLightToggle', 'lightMode')
+        localStorage.setItem('darkLightToggle', 'lightMode');
 
         if ($('.container').hasClass("bg-dark"))
         {
@@ -94,7 +95,7 @@ function darkModebutton() {
     }
     else
     {
-        localStorage.setItem('darkLightToggle', 'darkMode')
+        localStorage.setItem('darkLightToggle', 'darkMode');
         if ($('.container').hasClass("bg-light"))
         {
             $('.container').removeClass("bg-light");
@@ -285,7 +286,7 @@ function get_playerStats(p_id) {
         const a = fetch(url_list[i]);
 
         a.then(response => {
-            return response.json()
+            return response.json();
         })
         .then(data => {
             let x = data.data;
@@ -389,7 +390,7 @@ function displayLakers() {
 function displayNets() {
     var team_id = "3";
     var team_id2 = "4";
-    var img = '<img src="media/teamlogos/nets.png" alt="" height="225px" width="275px">'
+    var img = '<img src="media/teamlogos/nets.png" alt="" height="225px" width="275px">';
     var team_name = 'Brooklym Nets';
     displayTeam(team_id, team_name, team_id2, img);
 }
@@ -428,7 +429,7 @@ function displayWarriors() {
 
 function displayRaptors() {
     var team_id = "28";
-    var team_id2 = "38"
+    var team_id2 = "38";
     var img = '<img src="media/teamlogos/raptors.png" alt="" height="260px" width="310px">';
     var team_name = "Toronto Raptors";
     displayTeam(team_id, team_name, team_id2, img);
@@ -520,7 +521,7 @@ function displayTeam(tID, tNAME, tID2, img) {
         let org = 0;
         org += total_hts * 0.9;
         document.getElementById("off_score").innerHTML = org.toFixed(1);
-    })
+    });
 
     let active_players_id_list = [];
     let active_players_name_list = [];
@@ -535,9 +536,9 @@ function displayTeam(tID, tNAME, tID2, img) {
     .then(response => response.json())
     .then(response => {
         console.log(response);
-        const a = response.api
+        const a = response.api;
         console.log(a.players);
-        const b = a.players
+        const b = a.players;
         for (let i=0; i < b.length; i++)
         {
             if (b[i].startNba > 2000)
@@ -582,8 +583,8 @@ function buildTable(a, b){
     .then(response => response.json())
     .then(response => {
         console.log(response);
-        const x = response.api
-        const y = x.statistics
+        const x = response.api;
+        const y = x.statistics;
 
         for(let i=0; i<82; i++)
         {
@@ -629,12 +630,12 @@ function buildTable(a, b){
             ppg = (ppg/82);
             apg = (apg/82);
             rpg = (rpg/82);
-            pm = (pm/82)
-            ftp = (ftp/82)
-            pos = y[0]['pos']
-            blks = (blks/82)
-            stls = (stls/82)
-            fouls = (fouls/82)
+            pm = (pm/82);
+            ftp = (ftp/82);
+            pos = y[0].pos;
+            blks = (blks/82);
+            stls = (stls/82);
+            fouls = (fouls/82);
 
             document.getElementById('team_ranking').innerHTML += `<tr>
                                                                     <th scope="row">${b}(${pos})</th>
@@ -645,7 +646,7 @@ function buildTable(a, b){
                                                                     <td>${stls.toFixed(1)}</td>
                                                                     <td>${fouls.toFixed(1)}</td>
                                                                     <td>${pm.toFixed(1)}</td>
-                                                                </tr>`
+                                                                </tr>`;
         })
         .catch(err => {
             console.error(err);
@@ -663,7 +664,7 @@ function buildTable(a, b){
 function playerone_byol() {
 
     let pname = document.getElementById("player_one").value;
-    var type = "one"
+    var type = "one";
 
     displayStats_byol(pname, type);
 
@@ -672,7 +673,7 @@ function playerone_byol() {
 function playertwo_byol() {
 
     let pname = document.getElementById("player_two").value;
-    var type = "two"
+    var type = "two";
 
     displayStats_byol(pname, type);
 
@@ -681,7 +682,7 @@ function playertwo_byol() {
 function playerthree_byol() {
 
     let pname = document.getElementById("player_three").value;
-    var type = "three"
+    var type = "three";
 
     displayStats_byol(pname, type);
 
@@ -690,7 +691,7 @@ function playerthree_byol() {
 function playerfour_byol() {
 
     let pname = document.getElementById("player_four").value;
-    var type = "four"
+    var type = "four";
 
     displayStats_byol(pname, type);
 
@@ -699,7 +700,7 @@ function playerfour_byol() {
 function playerfive_byol() {
 
     let pname = document.getElementById("player_five").value;
-    var type = "five"
+    var type = "five";
 
     displayStats_byol(pname, type);
 
@@ -708,14 +709,14 @@ function playerfive_byol() {
 function displayStats_byol(pname, type) {
 
     const url = "https://www.balldontlie.io/api/v1/players?search=" + pname;
-    const a = fetch(url)
+    const a = fetch(url);
 
     a.then(response => {
-        return response.json()
+        return response.json();
     })
     .then(data => {
-        let x = data.data
-        console.log(x)
+        let x = data.data;
+        console.log(x);
 
         for (let i=0; i<x.length; i++)
         {
@@ -723,8 +724,8 @@ function displayStats_byol(pname, type) {
             var p_id = x[i].id;
             var p_name = x[i].first_name + " " +  x[i].last_name;
             var p_pos = x[i].position;
-            var p_height = `${x[i].height_feet}` + " feet " +  `${x[i].height_inches}` + " inches"
-            var p_team = x[i]['team']['full_name'];
+            var p_height = `${x[i].height_feet}` + " feet " +  `${x[i].height_inches}` + " inches";
+            var p_team = x[i].team.full_name;
 
         }
 
@@ -732,7 +733,7 @@ function displayStats_byol(pname, type) {
     const a = fetch(url2);
 
     a.then(response => {
-        return response.json()
+        return response.json();
     })
     .then(data => {
         let x = data.data;
@@ -753,7 +754,7 @@ function displayStats_byol(pname, type) {
             <p>${p_name} (${p_pos})</p>
             <p>${p_height}</p>
             <p>${p_team}</p>
-            `
+            `;
             document.getElementById("player1_ppg").innerHTML = ppg;
             document.getElementById("player1_rpg").innerHTML = rpg;
             document.getElementById("player1_apg").innerHTML = apg;
@@ -768,7 +769,7 @@ function displayStats_byol(pname, type) {
             <p>${p_name} (${p_pos})</p>
             <p>${p_height}</p>
             <p>${p_team}</p>
-            `
+            `;
 
             document.getElementById("player2_ppg").innerHTML = ppg;
             document.getElementById("player2_rpg").innerHTML = rpg;
@@ -785,7 +786,7 @@ function displayStats_byol(pname, type) {
             <p>${p_name} (${p_pos})</p>
             <p>${p_height}</p>
             <p>${p_team}</p>
-            `
+            `;
 
             document.getElementById("player3_ppg").innerHTML = ppg;
             document.getElementById("player3_rpg").innerHTML = rpg;
@@ -802,7 +803,7 @@ function displayStats_byol(pname, type) {
             <p>${p_name} (${p_pos})</p>
             <p>${p_height}</p>
             <p>${p_team}</p>
-            `
+            `;
 
             document.getElementById("player4_ppg").innerHTML = ppg;
             document.getElementById("player4_rpg").innerHTML = rpg;
@@ -819,7 +820,7 @@ function displayStats_byol(pname, type) {
             <p>${p_name} (${p_pos})</p>
             <p>${p_height}</p>
             <p>${p_team}</p>
-            `
+            `;
 
             document.getElementById("player5_ppg").innerHTML = ppg;
             document.getElementById("player5_rpg").innerHTML = rpg;
@@ -830,8 +831,8 @@ function displayStats_byol(pname, type) {
             localStorage.setItem("p5_apg", apg);
         }
 
-        })
-    })
+        });
+    });
 }
 
 
@@ -843,7 +844,7 @@ function findResults_byol() {
     team_ppg = parseFloat(localStorage.getItem("p1_ppg")) + parseFloat(localStorage.getItem("p2_ppg")) + parseFloat(localStorage.getItem("p3_ppg")) + parseFloat(localStorage.getItem("p4_ppg")) + parseFloat(localStorage.getItem("p5_ppg"));
     team_apg = parseFloat(localStorage.getItem("p1_apg")) + parseFloat(localStorage.getItem("p2_apg")) + parseFloat(localStorage.getItem("p3_apg")) + parseFloat(localStorage.getItem("p4_apg")) + parseFloat(localStorage.getItem("p5_apg"));
     team_rpg = parseFloat(localStorage.getItem("p1_rpg")) + parseFloat(localStorage.getItem("p2_rpg")) + parseFloat(localStorage.getItem("p3_rpg")) + parseFloat(localStorage.getItem("p4_rpg")) + parseFloat(localStorage.getItem("p5_rpg"));
-    console.log(team_ppg, team_apg, team_rpg)
+    console.log(team_ppg, team_apg, team_rpg);
 
     document.getElementById("strengths_byol").innerHTML = "";
     document.getElementById("weakness_byol").innerHTML = "";
@@ -854,21 +855,21 @@ function findResults_byol() {
     // TEAM PPG
     if (team_ppg > 80)
     {
-        var msg = "You have constructed an scoring-minded team"
+        var msg = "You have constructed an scoring-minded team";
         var grade = "A";
         document.getElementById("strengths_byol").innerHTML = msg;
         document.getElementById("off_grade").innerHTML = grade;
     }
     else if (team_ppg < 80 && team_ppg > 60)
     {
-        var msg = "You have constructed a competitive scoring team"
+        var msg = "You have constructed a competitive scoring team";
         var grade = "B";
         document.getElementById("strengths_byol").innerHTML = msg;
         document.getElementById("off_grade").innerHTML = grade;
     }
     else if (team_ppg < 60)
     {
-        var msg = "You have constructed a team that may struggle in scoring"
+        var msg = "You have constructed a team that may struggle in scoring";
         var grade = "C";
         document.getElementById("weakness_byol").innerHTML = msg;
         document.getElementById("off_grade").innerHTML = grade;
@@ -878,22 +879,22 @@ function findResults_byol() {
     // TEAM APG
     if (team_apg > 24)
     {
-        var msg = ". You have constructed a very unselfish team, willing to pass for others"
-        var grade = "A"
+        var msg = ". You have constructed a very unselfish team, willing to pass for others";
+        var grade = "A";
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("plm_grade").innerHTML = grade;
     }
     else if (team_apg < 24 && team_apg > 10)
     {
-        var msg = ". You have constructed a team that can initate an offensive system properly"
-        var grade = "B"
+        var msg = ". You have constructed a team that can initate an offensive system properly";
+        var grade = "B";
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("plm_grade").innerHTML = grade;
     }
     else if (team_apg < 10)
     {
-        var msg = ". You have constructed a team that may have chemistry and passing issues"
-        var grade = "C"
+        var msg = ". You have constructed a team that may have chemistry and passing issues";
+        var grade = "C";
         document.getElementById("weakness_byol").innerHTML += msg;
         document.getElementById("plm_grade").innerHTML = grade;
     }
@@ -901,22 +902,22 @@ function findResults_byol() {
     // TEAM RPG
     if (team_rpg > 35)
     {
-        var msg = ". You have constructed a team that is willing to crash the boards on deffence"
-        var grade = "A"
+        var msg = ". You have constructed a team that is willing to crash the boards on deffence";
+        var grade = "A";
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
     else if (team_rpg < 35 && team_rpg > 20)
     {
-        var msg = ". You have constructed a team that can adequatley play defence"
-        var grade = "B"
+        var msg = ". You have constructed a team that can adequatley play defence";
+        var grade = "B";
         document.getElementById("strengths_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
     else if (team_rpg < 25)
     {
-        var msg = ". You have constructed a team that may arise some defensive issues"
-        var grade = "C"
+        var msg = ". You have constructed a team that may arise some defensive issues";
+        var grade = "C";
         document.getElementById("weakness_byol").innerHTML += msg;
         document.getElementById("def_grade").innerHTML = grade;
     }
