@@ -51,7 +51,7 @@ Now Let me introduce to you my features of the website
 - First of all, if you are confused behind any basketball terminologies, please refer to the "About Us" page to fimiliarise yourself!
 
 -  Home Page
-   This home page contains 
+   This home page contains a brief walkt through of the basketball terminologies that will be used throughout the      whole website. Mini References are also added at the bottom
 
 - "Build Your Starting 5"!
    'Build Your Own Starting 5!' is a mini-game on our site where you can create your own starting lineup     team!
