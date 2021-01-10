@@ -11,7 +11,7 @@
 // =======================================
 // =======================================
 
-if (localStorage.getItem('darkLightToggle' == null) || localStorage.getItem('darkLightToggle') == "lightMode")
+if (localStorage.getItem('darkLightToggle' === null) || localStorage.getItem('darkLightToggle') == "lightMode")
 {
     localStorage.setItem('darkLightToggle', "lightMode");
 }
