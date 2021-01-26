@@ -1,4 +1,4 @@
-# Assignment 2- Basketball Statistical Search Website :basketball: :running:
+# Assignment 2 - Basketball Statistical Search Website :basketball: :running:
 
 Name: Hugo Von Louwen Dorosan <br />
 Class: IT01 <br />
